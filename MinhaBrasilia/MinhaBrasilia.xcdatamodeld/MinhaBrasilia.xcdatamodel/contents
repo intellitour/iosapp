@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Categoria" representedClassName="Categoria" syncable="YES">
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="lojas" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Loja" inverseName="categoria" inverseEntity="Loja" syncable="YES"/>
+    </entity>
+    <entity name="Loja" representedClassName="Loja" syncable="YES">
+        <attribute name="endereco" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subtitulo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="telefone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="categoria" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categoria" inverseName="lojas" inverseEntity="Categoria" syncable="YES"/>
+        <relationship name="quadra" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Quadra" inverseName="quadraDaLoja" inverseEntity="Quadra" syncable="YES"/>
+    </entity>
+    <entity name="Quadra" representedClassName="Quadra" syncable="YES">
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="quadraDaLoja" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Loja" inverseName="quadra" inverseEntity="Loja" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Loja" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Categoria" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="Quadra" positionX="-36" positionY="9" width="128" height="75"/>
+    </elements>
+</model>

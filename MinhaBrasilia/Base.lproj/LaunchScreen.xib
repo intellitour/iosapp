@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="K4E-E3-H3G">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MinhaBrasília" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV2-G5-ObD">
+                    <rect key="frame" x="147" y="89" width="187" height="36"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                    <color key="textColor" red="0.92156862745098034" green="0.94901960784313721" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="K4E-E3-H3G" secondAttribute="bottom" id="CNT-VJ-0hE"/>
+                <constraint firstItem="K4E-E3-H3G" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OQU-RB-QZP"/>
+                <constraint firstItem="K4E-E3-H3G" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aOX-jb-YEG"/>
+                <constraint firstAttribute="trailing" secondItem="K4E-E3-H3G" secondAttribute="trailing" id="g8J-PT-j0x"/>
+                <constraint firstItem="VV2-G5-ObD" firstAttribute="centerX" secondItem="K4E-E3-H3G" secondAttribute="centerX" id="iHq-hg-fYN"/>
+                <constraint firstItem="VV2-G5-ObD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="89" id="vrd-LS-6UJ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="548" y="455"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="splashscreen.png" width="960" height="720"/>
+    </resources>
+</document>
