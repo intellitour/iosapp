@@ -8,63 +8,49 @@
 
 #import "TelaInicialViewController.h"
 #import "RefinarBuscaViewController.h"
+#import "Constantes.h"
 
 @interface TelaInicialViewController ()
+@property (nonatomic, strong) NSString *identificador;
 
-@property (
 
 @end
 
 @implementation TelaInicialViewController
-static NSString *const IdentificadorSegueAsaSul = @"segueAsaSul";
-static NSString *const IdentificadorSegueAsaNorte = @"segueAsaNorte";
+@synthesize identificador;
+static NSString *const SegueTelaInicial = @"segueTelaInicial";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)iniciar:(UIControl *)sender {
     switch (sender.tag) {
         case 1:
-            statements
+            identificador = IdentificadorAsaNorte;
             break;
-
+        case 2:
+            identificador = IdentificadorAsaSul;
+            break;
         default:
             break;
     }
-}
 
-/*
-- (IBAction)iniciarAsaSul:(id)sender {
-    //RefinarBuscaViewController *refinarBuscaVC = [[RefinarBuscaViewController alloc] init];
-    [self performSegueWithIdentifier:IdentificadorSegueAsaSul sender:self];
-    //[self.parentViewController presentViewController:refinarBuscaVC animated:YES completion:nil];
-}
-
-- (IBAction)iniciarAsaNorte:(id)sender {
-
+    [self performSegueWithIdentifier:SegueTelaInicial sender:self];
 }
 
 
-#pragma mark - Navigation
-
+#pragma mark - segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:IdentificadorSegueAsaSul]) {
-        RefinarBuscaViewController *refinarBuscaVC = [segue destinationViewController];
-        NSInteger tagIndex = [(UIButton *) sender tag];
-        [refinarBuscaVC setIndexBtnClicado:&tagIndex];
-    } else if ([[segue identifier] isEqualToString:IdentificadorSegueAsaNorte]) {
-        RefinarBuscaViewController *refinarBuscaVC = [segue destinationViewController];
-        NSInteger tagIndex = [(UIButton *) sender tag];
-        [refinarBuscaVC setIndexBtnClicado:&tagIndex];
+    if ([[segue identifier] isEqualToString:SegueTelaInicial]) {
+        RefinarBuscaViewController *refinarBuscaVC = (RefinarBuscaViewController *)[[segue destinationViewController] topViewController];
+        [refinarBuscaVC setIdentificadorBtn:identificador];
     }
-}*/
+}
 
 
 @end

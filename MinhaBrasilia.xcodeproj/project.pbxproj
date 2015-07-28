@@ -19,6 +19,7 @@
 		A300264A1B5DE1D3001FDAD2 /* splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A30026401B5DE1D3001FDAD2 /* splashscreen.png */; };
 		A3B7C2E61B66D605002C6F4B /* CategoriaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B7C2E51B66D605002C6F4B /* CategoriaViewController.m */; };
 		A3B7C2E91B66D801002C6F4B /* RefinarBuscaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B7C2E81B66D801002C6F4B /* RefinarBuscaViewController.m */; };
+		A3B7C2EC1B66FF57002C6F4B /* Constantes.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B7C2EB1B66FF57002C6F4B /* Constantes.m */; };
 		A3C8E4C51B5DE00C001B547E /* CategoriaAsaSulViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8E4BE1B5DE00C001B547E /* CategoriaAsaSulViewController.m */; };
 		A3C8E4C61B5DE00C001B547E /* CelulaEstabelecimentoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8E4C01B5DE00C001B547E /* CelulaEstabelecimentoTableViewCell.m */; };
 		A3C8E4C71B5DE00C001B547E /* EstabelecimentoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8E4C21B5DE00C001B547E /* EstabelecimentoViewController.m */; };
@@ -61,6 +62,8 @@
 		A3B7C2E51B66D605002C6F4B /* CategoriaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaViewController.m; sourceTree = "<group>"; };
 		A3B7C2E71B66D801002C6F4B /* RefinarBuscaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefinarBuscaViewController.h; sourceTree = "<group>"; };
 		A3B7C2E81B66D801002C6F4B /* RefinarBuscaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefinarBuscaViewController.m; sourceTree = "<group>"; };
+		A3B7C2EA1B66FF57002C6F4B /* Constantes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constantes.h; sourceTree = "<group>"; };
+		A3B7C2EB1B66FF57002C6F4B /* Constantes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constantes.m; sourceTree = "<group>"; };
 		A3C8E4BD1B5DE00C001B547E /* CategoriaAsaSulViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriaAsaSulViewController.h; sourceTree = "<group>"; };
 		A3C8E4BE1B5DE00C001B547E /* CategoriaAsaSulViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaAsaSulViewController.m; sourceTree = "<group>"; };
 		A3C8E4BF1B5DE00C001B547E /* CelulaEstabelecimentoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CelulaEstabelecimentoTableViewCell.h; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				A3C8E4C01B5DE00C001B547E /* CelulaEstabelecimentoTableViewCell.m */,
 				A3C8E4C11B5DE00C001B547E /* EstabelecimentoViewController.h */,
 				A3C8E4C21B5DE00C001B547E /* EstabelecimentoViewController.m */,
+				A3B7C2EA1B66FF57002C6F4B /* Constantes.h */,
+				A3B7C2EB1B66FF57002C6F4B /* Constantes.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				A30026451B5DE1D3001FDAD2 /* Categoria.m in Sources */,
 				A3F9C8591B5DA8F8001ADC7A /* main.m in Sources */,
 				A3C8E4C51B5DE00C001B547E /* CategoriaAsaSulViewController.m in Sources */,
+				A3B7C2EC1B66FF57002C6F4B /* Constantes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

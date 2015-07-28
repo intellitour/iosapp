@@ -7,31 +7,56 @@
 //
 
 #import "RefinarBuscaViewController.h"
+#import "CategoriaViewController.h"
+#import "Constantes.h"
 
 @interface RefinarBuscaViewController ()
+
+@property (nonatomic, strong) NSMutableArray *listaArquivoPlist;
 
 @end
 
 @implementation RefinarBuscaViewController
+@synthesize identificadorBtn;
+@synthesize listaArquivoPlist;
+@synthesize listaDeCategorias;
+static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+- (IBAction)carregarCategorias:(id)sender {
+    if ([identificadorBtn isEqualToString:IdentificadorAsaNorte]) {
+        listaDeCategorias = [self carregarPlist:identificadorBtn];
+    } else if ([identificadorBtn isEqualToString:IdentificadorAsaSul]) {
+        listaDeCategorias = [self carregarPlist:identificadorBtn];
+    }
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+    [self performSegueWithIdentifier:SegueRefinarBusca sender:self];
+}
+
+//Método responsável por carregar o arquivo .plist de acordo com o identificador
+- (NSMutableArray *)carregarPlist:(NSString *)peloIdentificador {
+    listaArquivoPlist = [[NSMutableArray alloc] init];
+    NSString *caminho = [NSString stringWithFormat:@"Categoria%@", peloIdentificador];
+    NSString *arquivoPlist = [[NSBundle mainBundle] pathForResource:caminho ofType:@"plist"];
+    NSDictionary *dicionarioPlist = [NSDictionary dictionaryWithContentsOfFile:arquivoPlist];
+    listaArquivoPlist = [dicionarioPlist objectForKey:@"categorias"];
+    return listaArquivoPlist;
+}
+
+#pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:SegueRefinarBusca]) {
+        CategoriaViewController *categoriaVC = (CategoriaViewController *)[[segue destinationViewController] topViewController];
+        [categoriaVC setItensDaTabela:listaDeCategorias];
+    }
 }
-*/
+
 
 @end

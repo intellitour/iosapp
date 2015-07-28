@@ -10,6 +10,7 @@
 
 @interface RefinarBuscaViewController : UIViewController
 
-@property (nonatomic, assign) NSInteger *indexBtnClicado;
+@property (nonatomic, strong) NSString* identificadorBtn;
+@property (nonatomic, strong) NSMutableArray* listaDeCategorias;
 
 @end
