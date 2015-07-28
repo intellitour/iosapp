@@ -20,7 +20,6 @@
 
 @implementation CategoriaViewController
 @synthesize itensDaTabela;
-@synthesize contexto;
 @synthesize categoria;
 static NSString *const IdentificadorCelula = @"idCelulaCategorias";
 static NSString *const SegueCategorias = @"segueCategorias";
@@ -38,20 +37,21 @@ static NSString *const SegueCategorias = @"segueCategorias";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    contexto = [self managedObjectContext];
-
+    self.managedObjectContext = [self managedObjectContext];
 }
 
 - (NSManagedObjectContext *)managedObjectContext {
     id delegate = [[UIApplication sharedApplication] delegate];
     if ([delegate performSelector:@selector(managedObjectContext)]) {
-        contexto = [delegate managedObjectContext];
+        self.managedObjectContext = [delegate managedObjectContext];
     }
-    return contexto;
+    return self.managedObjectContext;
 }
 
 #pragma mark - Ações da tabela
@@ -71,12 +71,20 @@ static NSString *const SegueCategorias = @"segueCategorias";
     }
 
     //Criando para cada categoria uma entidade categoria
-    categoria = [NSEntityDescription insertNewObjectForEntityForName:@"Categoria" inManagedObjectContext:contexto];
+    categoria = [NSEntityDescription insertNewObjectForEntityForName:@"Categoria" inManagedObjectContext:self.managedObjectContext];
 
-    categoria.nome = [itensDaTabela objectAtIndex:indexPath.row];
+    //TODO Criar método para persistir separadamente
+    [categoria setValue:[itensDaTabela objectAtIndex:indexPath.row] forKey:@"nome"];
 
-    [celula.textLabel setText:categoria.nome];
-    [celula setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Não foi possível salvar. Erro: %@", error);
+        NSLog(@"Erro: %@", [error localizedDescription]);
+    } else {
+        [celula.textLabel setText:categoria.nome];
+        [celula setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    }
+
     return celula;
 }
 
