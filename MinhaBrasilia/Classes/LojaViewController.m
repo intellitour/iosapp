@@ -31,9 +31,9 @@
      self.itensDaTabela = [[contexto executeFetchRequest:fetch error:nil] mutableCopy];
      [self.tableViewCategorias reloadData];*/
 }
-
+/*
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -43,7 +43,7 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 }
-
+*/
 /*
 #pragma mark - Navigation
 
