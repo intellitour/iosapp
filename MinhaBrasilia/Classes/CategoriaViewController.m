@@ -81,20 +81,19 @@ static NSString *const SegueCategorias = @"segueCategorias";
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     categoria.nome = [itensDaTabela objectAtIndex:indexPath.row];
     //Passando a categoria clicada para o sender
     [self performSegueWithIdentifier:SegueCategorias sender:categoria.nome];
 }
 
-
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+#pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+    if([segue.identifier isEqualToString:SegueCategorias]) {
+        EstabelecimentoViewController *estabelecimento = [segue destinationViewController];
+        [estabelecimento setFCategoria:sender];
+    }
+}*/
 
 @end
