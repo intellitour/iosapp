@@ -38,20 +38,21 @@ static NSString *const SegueCategorias = @"segueCategorias";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.managedObjectContext = [self managedObjectContext];
+    //self.managedObjectContext = [self managedObjectContext];
 }
 
 - (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *managedObjectContext = nil;
     id delegate = [[UIApplication sharedApplication] delegate];
     if ([delegate performSelector:@selector(managedObjectContext)]) {
-        self.managedObjectContext = [delegate managedObjectContext];
+        managedObjectContext = [delegate managedObjectContext];
     }
-    return self.managedObjectContext;
+    return managedObjectContext;
 }
 
 #pragma mark - Ações da tabela

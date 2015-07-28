@@ -11,6 +11,6 @@
 @interface CategoriaViewController : UIViewController
 
 @property (nonatomic, strong) NSMutableArray *itensDaTabela;
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+//@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end
