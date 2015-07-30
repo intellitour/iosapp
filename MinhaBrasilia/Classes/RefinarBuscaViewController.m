@@ -33,9 +33,9 @@ static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
 #pragma mark - Carregar categorias
 - (IBAction)carregarCategorias:(id)sender {
     if ([identificadorBtn isEqualToString:IdentificadorAsaNorte]) {
-        listaDeCategorias = [self carregarPlist:identificadorBtn];
+        listaDeCategorias = [self carregarPlistDeCategoriasComId:identificadorBtn];
     } else if ([identificadorBtn isEqualToString:IdentificadorAsaSul]) {
-        listaDeCategorias = [self carregarPlist:identificadorBtn];
+        listaDeCategorias = [self carregarPlistDeCategoriasComId:identificadorBtn];
     }
 
     [self performSegueWithIdentifier:SegueRefinarBusca sender:self];
@@ -43,9 +43,9 @@ static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
 
 #pragma mark - Plist
 //Método responsável por carregar o arquivo .plist de acordo com o identificador
-- (NSMutableArray *)carregarPlist:(NSString *)peloIdentificador {
+- (NSMutableArray *)carregarPlistDeCategoriasComId:(NSString *)identificador {
     listaArquivoPlist = [[NSMutableArray alloc] init];
-    NSString *caminho = [NSString stringWithFormat:@"Categoria%@", peloIdentificador];
+    NSString *caminho = [NSString stringWithFormat:@"Categoria%@", identificador];
     NSString *arquivoPlist = [[NSBundle mainBundle] pathForResource:caminho ofType:@"plist"];
     NSDictionary *dicionarioPlist = [NSDictionary dictionaryWithContentsOfFile:arquivoPlist];
     listaArquivoPlist = [dicionarioPlist objectForKey:@"categorias"];
@@ -57,6 +57,7 @@ static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
     if ([[segue identifier] isEqualToString:SegueRefinarBusca]) {
         CategoriaViewController *categoriaVC = (CategoriaViewController *)[[segue destinationViewController] topViewController];
         [categoriaVC setItensDaTabela:listaDeCategorias];
+        [categoriaVC setIdentificadorBtn:identificadorBtn];
     }
 }
 

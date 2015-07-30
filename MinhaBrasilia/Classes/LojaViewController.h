@@ -12,7 +12,10 @@
 @interface LojaViewController : UIViewController
 
 @property (nonatomic,strong) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+
+@property (nonatomic, strong) NSString* identificadorBtn;
+
+@property (strong, nonatomic) NSArray* listaFiltrada;
 
 @property (strong, nonatomic) NSString *txtCategoria;
 @property (strong, nonatomic) NSString *txtTitulo;

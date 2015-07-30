@@ -9,19 +9,22 @@
 #import "CategoriaViewController.h"
 #import "RefinarBuscaViewController.h"
 #import "LojaViewController.h"
+
 #import "Categoria.h"
+
 #import "Constantes.h"
 
 
 @interface CategoriaViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableViewCategorias;
 @property (nonatomic, strong) Categoria *categoria;
+@property (nonatomic, strong) NSMutableArray *listaArquivoPlist;
+
 
 @end
 
 @implementation CategoriaViewController
-@synthesize itensDaTabela;
-@synthesize categoria;
+@synthesize identificadorBtn;
 static NSString *const IdentificadorCelula = @"idCelulaCategorias";
 static NSString *const SegueCategorias = @"segueCategorias";
 
@@ -58,7 +61,7 @@ static NSString *const SegueCategorias = @"segueCategorias";
 
 #pragma mark - Ações da tabela
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return itensDaTabela.count;
+    return self.itensDaTabela.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -73,17 +76,17 @@ static NSString *const SegueCategorias = @"segueCategorias";
     }
 
     //Criando para cada categoria uma entidade categoria
-    categoria = [NSEntityDescription insertNewObjectForEntityForName:@"Categoria" inManagedObjectContext:self.managedObjectContext];
+    self.categoria = [NSEntityDescription insertNewObjectForEntityForName:@"Categoria" inManagedObjectContext:self.managedObjectContext];
 
     //TODO Criar método para persistir separadamente
-    [categoria setValue:[itensDaTabela objectAtIndex:indexPath.row] forKey:@"nome"];
+    [self.categoria setValue:[self.itensDaTabela objectAtIndex:indexPath.row] forKey:@"nome"];
 
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"Não foi possível salvar. Erro: %@", error);
         NSLog(@"Erro: %@", [error localizedDescription]);
     } else {
-        [celula.textLabel setText:categoria.nome];
+        [celula.textLabel setText:self.categoria.nome];
         [celula setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
 
@@ -92,9 +95,9 @@ static NSString *const SegueCategorias = @"segueCategorias";
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    categoria.nome = [itensDaTabela objectAtIndex:indexPath.row];
+    self.categoria.nome = [self.itensDaTabela objectAtIndex:indexPath.row];
     //Passando a categoria clicada para o sender
-    [self performSegueWithIdentifier:SegueCategorias sender:categoria.nome];
+    [self performSegueWithIdentifier:SegueCategorias sender:self.categoria.nome];
 }
 
 
@@ -103,11 +106,7 @@ static NSString *const SegueCategorias = @"segueCategorias";
     if([segue.identifier isEqualToString:SegueCategorias]) {
         LojaViewController *lojaVC = (LojaViewController *)[[segue destinationViewController] topViewController];
         [lojaVC setTxtCategoria:sender];
-        [lojaVC setTxtEndereco:sender];
-        [lojaVC setTxtQuadra:sender];
-        [lojaVC setTxtSubtitulo:sender];
-        [lojaVC setTxtTelefone:sender];
-        [lojaVC setTxtTitulo:sender];
+        [lojaVC setIdentificadorBtn:identificadorBtn];
     }
 }
 

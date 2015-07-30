@@ -21,7 +21,7 @@
 }
 //-preencherCelulaCom:vlTitulo:vlSubtitulo:vlCategoria:vlEndereco:vlQuadra:vlTelefone
 
-- (void) preencherCelulaComTitulo:(NSString *)vlTitulo comSubtitulo:(NSString*)vlSubtitulo comCategoria:(NSString*)vlCategoria comEndereco:(NSString*)vlEndereco comQuadra:(NSString*)vlQuadra comTelefone:(NSString*)vlTelefone{
+- (void) preencherCelulaComTitulo:(NSString *)vlTitulo comSubtitulo:(NSString*)vlSubtitulo comCategoria:(Categoria*)vlCategoria comEndereco:(NSString*)vlEndereco comQuadra:(Quadra*)vlQuadra comTelefone:(NSString*)vlTelefone{
     if (!isEmpty(vlTitulo)) {
         [self.vlTitulo setText:vlTitulo];
     }
@@ -29,13 +29,13 @@
         [self.vlSubtitulo setText:vlSubtitulo];
     }
     if (!isEmpty(vlCategoria)) {
-        [self.vlCategoria setText:vlCategoria];
+        [self.vlCategoria setValue:vlCategoria forKey:@"nome"];
     }
     if (!isEmpty(vlEndereco)) {
         [self.vlEndereco setText:vlEndereco];
     }
     if (!isEmpty(vlQuadra)) {
-        [self.vlQuadra setText:vlQuadra];
+        [self.vlQuadra setValue:vlQuadra forKey:@"nome"];
     }
     if (!isEmpty(vlTelefone)) {
         [self.vlTelefone setText:vlTelefone];
