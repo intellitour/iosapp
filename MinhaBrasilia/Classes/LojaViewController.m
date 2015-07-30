@@ -7,16 +7,28 @@
 //
 
 #import "LojaViewController.h"
+#import "CategoriaViewController.h"
+#import "LojaTableViewCell.h"
 #import "Categoria.h"
 
 @interface LojaViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableViewLojas;
+@property (weak, nonatomic) IBOutlet UITableView *labelCategoria;
+
+
 
 @end
 
 @implementation LojaViewController
+@synthesize txtCategoria;
+static NSString *const IdentificadorCelula = @"idCelulaLoja";
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self.tableViewLojas setDelegate:self];
+    [self.tableViewLojas setDataSource:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,28 +37,48 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.fetchedResultsController = nil;
+    //self.fetchedResultsController = nil;
 
-     /*NSFetchRequest *fetch = [[NSFetchRequest alloc] initWithEntityName:@"Categoria"];
-     self.itensDaTabela = [[contexto executeFetchRequest:fetch error:nil] mutableCopy];
-     [self.tableViewCategorias reloadData];*/
 }
+
 /*
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#pragma mark - FetchResultsController
 
-}
+-(NSFetchedResultsController *)fetchedResultsController {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Entidade
+    NSEntityDescription *entidade = [NSEntityDescription entityForName:@"Categoria"
+                                              inManagedObjectContext:self.managedObjectContext];
+}*/
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-}
+ #pragma mark - UITableViewDataSource
+ - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+     return 10;
+ }
+
+ - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+     LojaTableViewCell *celula = [tableView dequeueReusableCellWithIdentifier:IdentificadorCelula
+                                                                forIndexPath:indexPath];
+     [celula preencherCelulaComTitulo:self.txtTitulo
+                         comSubtitulo:self.txtSubtitulo
+                         comCategoria:self.txtCategoria
+                          comEndereco:self.txtEndereco
+                            comQuadra:self.txtQuadra
+                          comTelefone:self.txtTelefone];
+    [celula setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+     return celula;
+ }
+
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 }
-*/
 /*
-#pragma mark - Navigation
+*/
 
+/*
+#pragma mark - Segue
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].

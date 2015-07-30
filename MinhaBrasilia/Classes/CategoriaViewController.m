@@ -8,6 +8,7 @@
 
 #import "CategoriaViewController.h"
 #import "RefinarBuscaViewController.h"
+#import "LojaViewController.h"
 #import "Categoria.h"
 #import "Constantes.h"
 
@@ -38,7 +39,7 @@ static NSString *const SegueCategorias = @"segueCategorias";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    //NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -96,13 +97,18 @@ static NSString *const SegueCategorias = @"segueCategorias";
     [self performSegueWithIdentifier:SegueCategorias sender:categoria.nome];
 }
 
-/*
+
 #pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:SegueCategorias]) {
-        EstabelecimentoViewController *estabelecimento = [segue destinationViewController];
-        [estabelecimento setFCategoria:sender];
+        LojaViewController *lojaVC = (LojaViewController *)[[segue destinationViewController] topViewController];
+        [lojaVC setTxtCategoria:sender];
+        [lojaVC setTxtEndereco:sender];
+        [lojaVC setTxtQuadra:sender];
+        [lojaVC setTxtSubtitulo:sender];
+        [lojaVC setTxtTelefone:sender];
+        [lojaVC setTxtTitulo:sender];
     }
-}*/
+}
 
 @end

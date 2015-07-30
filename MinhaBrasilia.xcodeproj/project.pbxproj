@@ -24,6 +24,7 @@
 		A3C8E4C61B5DE00C001B547E /* CelulaEstabelecimentoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8E4C01B5DE00C001B547E /* CelulaEstabelecimentoTableViewCell.m */; };
 		A3C8E4C71B5DE00C001B547E /* EstabelecimentoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8E4C21B5DE00C001B547E /* EstabelecimentoViewController.m */; };
 		A3C8E4C81B5DE00C001B547E /* TelaInicialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8E4C41B5DE00C001B547E /* TelaInicialViewController.m */; };
+		A3DC58D31B6995B400E4D460 /* LojaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3DC58D21B6995B400E4D460 /* LojaTableViewCell.m */; };
 		A3EB04621B68396200DE7900 /* LojaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3EB04611B68396200DE7900 /* LojaViewController.m */; };
 		A3F9C8591B5DA8F8001ADC7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F9C8581B5DA8F8001ADC7A /* main.m */; };
 		A3F9C85C1B5DA8F8001ADC7A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F9C85B1B5DA8F8001ADC7A /* AppDelegate.m */; };
@@ -73,6 +74,8 @@
 		A3C8E4C21B5DE00C001B547E /* EstabelecimentoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstabelecimentoViewController.m; sourceTree = "<group>"; };
 		A3C8E4C31B5DE00C001B547E /* TelaInicialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelaInicialViewController.h; sourceTree = "<group>"; };
 		A3C8E4C41B5DE00C001B547E /* TelaInicialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelaInicialViewController.m; sourceTree = "<group>"; };
+		A3DC58D11B6995B400E4D460 /* LojaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LojaTableViewCell.h; sourceTree = "<group>"; };
+		A3DC58D21B6995B400E4D460 /* LojaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LojaTableViewCell.m; sourceTree = "<group>"; };
 		A3EB04601B68396200DE7900 /* LojaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LojaViewController.h; sourceTree = "<group>"; };
 		A3EB04611B68396200DE7900 /* LojaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LojaViewController.m; sourceTree = "<group>"; };
 		A3F9C8531B5DA8F8001ADC7A /* MinhaBrasilia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinhaBrasilia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +157,8 @@
 				A3B7C2E51B66D605002C6F4B /* CategoriaViewController.m */,
 				A3EB04601B68396200DE7900 /* LojaViewController.h */,
 				A3EB04611B68396200DE7900 /* LojaViewController.m */,
+				A3DC58D11B6995B400E4D460 /* LojaTableViewCell.h */,
+				A3DC58D21B6995B400E4D460 /* LojaTableViewCell.m */,
 				A3C8E4BD1B5DE00C001B547E /* CategoriaAsaSulViewController.h */,
 				A3C8E4BE1B5DE00C001B547E /* CategoriaAsaSulViewController.m */,
 				A3C8E4BF1B5DE00C001B547E /* CelulaEstabelecimentoTableViewCell.h */,
@@ -344,6 +349,7 @@
 				A3B7C2E91B66D801002C6F4B /* RefinarBuscaViewController.m in Sources */,
 				A3C8E4C71B5DE00C001B547E /* EstabelecimentoViewController.m in Sources */,
 				A3F9C8621B5DA8F8001ADC7A /* ViewController.m in Sources */,
+				A3DC58D31B6995B400E4D460 /* LojaTableViewCell.m in Sources */,
 				A3B7C2E61B66D605002C6F4B /* CategoriaViewController.m in Sources */,
 				A30026461B5DE1D3001FDAD2 /* Loja.m in Sources */,
 				A3C8E4C61B5DE00C001B547E /* CelulaEstabelecimentoTableViewCell.m in Sources */,

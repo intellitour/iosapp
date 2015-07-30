@@ -30,6 +30,7 @@ static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Carregar categorias
 - (IBAction)carregarCategorias:(id)sender {
     if ([identificadorBtn isEqualToString:IdentificadorAsaNorte]) {
         listaDeCategorias = [self carregarPlist:identificadorBtn];
@@ -40,6 +41,7 @@ static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
     [self performSegueWithIdentifier:SegueRefinarBusca sender:self];
 }
 
+#pragma mark - Plist
 //Método responsável por carregar o arquivo .plist de acordo com o identificador
 - (NSMutableArray *)carregarPlist:(NSString *)peloIdentificador {
     listaArquivoPlist = [[NSMutableArray alloc] init];

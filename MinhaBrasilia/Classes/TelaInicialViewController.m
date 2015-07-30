@@ -11,8 +11,8 @@
 #import "Constantes.h"
 
 @interface TelaInicialViewController ()
-@property (nonatomic, strong) NSString *identificador;
 
+@property (nonatomic, strong) NSString *identificador;
 
 @end
 
@@ -28,6 +28,7 @@ static NSString *const SegueTelaInicial = @"segueTelaInicial";
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Ação botões iniciais
 - (IBAction)iniciar:(UIControl *)sender {
     switch (sender.tag) {
         case 1:
@@ -43,8 +44,7 @@ static NSString *const SegueTelaInicial = @"segueTelaInicial";
     [self performSegueWithIdentifier:SegueTelaInicial sender:self];
 }
 
-
-#pragma mark - segue
+#pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:SegueTelaInicial]) {
         RefinarBuscaViewController *refinarBuscaVC = (RefinarBuscaViewController *)[[segue destinationViewController] topViewController];

@@ -14,6 +14,11 @@
 @property (nonatomic,strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
-
+@property (strong, nonatomic) NSString *txtCategoria;
+@property (strong, nonatomic) NSString *txtTitulo;
+@property (strong, nonatomic) NSString *txtSubtitulo;
+@property (strong, nonatomic) NSString *txtEndereco;
+@property (strong, nonatomic) NSString *txtQuadra;
+@property (strong, nonatomic) NSString *txtTelefone;
 
 @end
