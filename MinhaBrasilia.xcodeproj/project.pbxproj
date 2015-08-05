@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5891C734627B3D23835B8249 /* libPods-MinhaBrasilia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FE23F471E553C7CE9E6084 /* libPods-MinhaBrasilia.a */; };
 		A30026411B5DE1D3001FDAD2 /* AsaNorte.plist in Resources */ = {isa = PBXBuildFile; fileRef = A30026321B5DE1D3001FDAD2 /* AsaNorte.plist */; };
 		A30026421B5DE1D3001FDAD2 /* AsaSul.plist in Resources */ = {isa = PBXBuildFile; fileRef = A30026331B5DE1D3001FDAD2 /* AsaSul.plist */; };
 		A30026431B5DE1D3001FDAD2 /* CategoriaAsaNorte.plist in Resources */ = {isa = PBXBuildFile; fileRef = A30026341B5DE1D3001FDAD2 /* CategoriaAsaNorte.plist */; };
@@ -17,6 +18,9 @@
 		A30026481B5DE1D3001FDAD2 /* icone_tabbar_cerveja_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = A300263E1B5DE1D3001FDAD2 /* icone_tabbar_cerveja_transparent.png */; };
 		A30026491B5DE1D3001FDAD2 /* icone_tabbar_garfofaca_transparente.png in Resources */ = {isa = PBXBuildFile; fileRef = A300263F1B5DE1D3001FDAD2 /* icone_tabbar_garfofaca_transparente.png */; };
 		A300264A1B5DE1D3001FDAD2 /* splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A30026401B5DE1D3001FDAD2 /* splashscreen.png */; };
+		A3528A7F1B6AFCD200DA4F43 /* DetalheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3528A7E1B6AFCD200DA4F43 /* DetalheViewController.m */; };
+		A3528A811B6B1AC300DA4F43 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3528A801B6B1AC300DA4F43 /* CoreLocation.framework */; };
+		A3528A831B6B1ACB00DA4F43 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3528A821B6B1ACB00DA4F43 /* MapKit.framework */; };
 		A3B7C2E61B66D605002C6F4B /* CategoriaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B7C2E51B66D605002C6F4B /* CategoriaViewController.m */; };
 		A3B7C2E91B66D801002C6F4B /* RefinarBuscaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B7C2E81B66D801002C6F4B /* RefinarBuscaViewController.m */; };
 		A3B7C2EC1B66FF57002C6F4B /* Constantes.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B7C2EB1B66FF57002C6F4B /* Constantes.m */; };
@@ -47,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A1881529D9937928DA6B3D0 /* Pods-MinhaBrasilia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinhaBrasilia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinhaBrasilia/Pods-MinhaBrasilia.debug.xcconfig"; sourceTree = "<group>"; };
 		A30026321B5DE1D3001FDAD2 /* AsaNorte.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AsaNorte.plist; sourceTree = "<group>"; };
 		A30026331B5DE1D3001FDAD2 /* AsaSul.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AsaSul.plist; sourceTree = "<group>"; };
 		A30026341B5DE1D3001FDAD2 /* CategoriaAsaNorte.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CategoriaAsaNorte.plist; sourceTree = "<group>"; };
@@ -60,6 +65,10 @@
 		A300263E1B5DE1D3001FDAD2 /* icone_tabbar_cerveja_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_tabbar_cerveja_transparent.png; sourceTree = "<group>"; };
 		A300263F1B5DE1D3001FDAD2 /* icone_tabbar_garfofaca_transparente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_tabbar_garfofaca_transparente.png; sourceTree = "<group>"; };
 		A30026401B5DE1D3001FDAD2 /* splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashscreen.png; sourceTree = "<group>"; };
+		A3528A7D1B6AFCD200DA4F43 /* DetalheViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalheViewController.h; sourceTree = "<group>"; };
+		A3528A7E1B6AFCD200DA4F43 /* DetalheViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalheViewController.m; sourceTree = "<group>"; };
+		A3528A801B6B1AC300DA4F43 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A3528A821B6B1ACB00DA4F43 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A3B7C2E41B66D605002C6F4B /* CategoriaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriaViewController.h; sourceTree = "<group>"; };
 		A3B7C2E51B66D605002C6F4B /* CategoriaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaViewController.m; sourceTree = "<group>"; };
 		A3B7C2E71B66D801002C6F4B /* RefinarBuscaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefinarBuscaViewController.h; sourceTree = "<group>"; };
@@ -92,6 +101,8 @@
 		A3F9C8741B5DA8F8001ADC7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3F9C8751B5DA8F8001ADC7A /* MinhaBrasiliaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinhaBrasiliaTests.m; sourceTree = "<group>"; };
 		A3F9C8A41B5DAD09001ADC7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A8FE23F471E553C7CE9E6084 /* libPods-MinhaBrasilia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MinhaBrasilia.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5CB7748F7AF12B8454FAE28 /* Pods-MinhaBrasilia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinhaBrasilia.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinhaBrasilia/Pods-MinhaBrasilia.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +110,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3528A831B6B1ACB00DA4F43 /* MapKit.framework in Frameworks */,
+				A3528A811B6B1AC300DA4F43 /* CoreLocation.framework in Frameworks */,
+				5891C734627B3D23835B8249 /* libPods-MinhaBrasilia.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +126,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EEC9295B1BD36BBDF1DC313 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8FE23F471E553C7CE9E6084 /* libPods-MinhaBrasilia.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A3B0306078ADF58F5B8DA8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A1881529D9937928DA6B3D0 /* Pods-MinhaBrasilia.debug.xcconfig */,
+				C5CB7748F7AF12B8454FAE28 /* Pods-MinhaBrasilia.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A30026311B5DE1D3001FDAD2 /* Recursos */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +190,8 @@
 				A3EB04611B68396200DE7900 /* LojaViewController.m */,
 				A3DC58D11B6995B400E4D460 /* LojaTableViewCell.h */,
 				A3DC58D21B6995B400E4D460 /* LojaTableViewCell.m */,
+				A3528A7D1B6AFCD200DA4F43 /* DetalheViewController.h */,
+				A3528A7E1B6AFCD200DA4F43 /* DetalheViewController.m */,
 				A3C8E4BD1B5DE00C001B547E /* CategoriaAsaSulViewController.h */,
 				A3C8E4BE1B5DE00C001B547E /* CategoriaAsaSulViewController.m */,
 				A3C8E4BF1B5DE00C001B547E /* CelulaEstabelecimentoTableViewCell.h */,
@@ -174,9 +207,13 @@
 		A3F9C84A1B5DA8F8001ADC7A = {
 			isa = PBXGroup;
 			children = (
+				A3528A821B6B1ACB00DA4F43 /* MapKit.framework */,
+				A3528A801B6B1AC300DA4F43 /* CoreLocation.framework */,
 				A3F9C8551B5DA8F8001ADC7A /* MinhaBrasilia */,
 				A3F9C8721B5DA8F8001ADC7A /* MinhaBrasiliaTests */,
 				A3F9C8541B5DA8F8001ADC7A /* Products */,
+				7A3B0306078ADF58F5B8DA8D /* Pods */,
+				1EEC9295B1BD36BBDF1DC313 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -242,9 +279,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3F9C8791B5DA8F8001ADC7A /* Build configuration list for PBXNativeTarget "MinhaBrasilia" */;
 			buildPhases = (
+				C870C27A5B336D477D55652F /* Check Pods Manifest.lock */,
 				A3F9C84F1B5DA8F8001ADC7A /* Sources */,
 				A3F9C8501B5DA8F8001ADC7A /* Frameworks */,
 				A3F9C8511B5DA8F8001ADC7A /* Resources */,
+				6C3F7EF3B10AA3E272B35DF6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -337,6 +376,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6C3F7EF3B10AA3E272B35DF6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MinhaBrasilia/Pods-MinhaBrasilia-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C870C27A5B336D477D55652F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A3F9C84F1B5DA8F8001ADC7A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -351,6 +423,7 @@
 				A3F9C8621B5DA8F8001ADC7A /* ViewController.m in Sources */,
 				A3DC58D31B6995B400E4D460 /* LojaTableViewCell.m in Sources */,
 				A3B7C2E61B66D605002C6F4B /* CategoriaViewController.m in Sources */,
+				A3528A7F1B6AFCD200DA4F43 /* DetalheViewController.m in Sources */,
 				A30026461B5DE1D3001FDAD2 /* Loja.m in Sources */,
 				A3C8E4C61B5DE00C001B547E /* CelulaEstabelecimentoTableViewCell.m in Sources */,
 				A30026451B5DE1D3001FDAD2 /* Categoria.m in Sources */,
@@ -483,6 +556,7 @@
 		};
 		A3F9C87A1B5DA8F8001ADC7A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A1881529D9937928DA6B3D0 /* Pods-MinhaBrasilia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MinhaBrasilia/Info.plist;
@@ -493,6 +567,7 @@
 		};
 		A3F9C87B1B5DA8F8001ADC7A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5CB7748F7AF12B8454FAE28 /* Pods-MinhaBrasilia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MinhaBrasilia/Info.plist;

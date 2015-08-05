@@ -9,6 +9,7 @@
 #import "LojaViewController.h"
 #import "CategoriaViewController.h"
 #import "LojaTableViewCell.h"
+#import "DetalheViewController.h"
 
 #import "Categoria.h"
 #import "Loja.h"
@@ -16,6 +17,7 @@
 @interface LojaViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableViewLojas;
 @property (weak, nonatomic) IBOutlet UITableView *labelCategoria;
+@property (weak, nonatomic) IBOutlet UITableView *buscaLojas;
 
 @property (nonatomic, strong) Loja *loja;
 
@@ -34,6 +36,9 @@ static NSString *const SegueLoja = @"segueLoja";
 
     [self.tableViewLojas setDelegate:self];
     [self.tableViewLojas setDataSource:self];
+
+    [self carregarPlistDeLojasComId:identificadorBtn
+                        filtradaPor:self.txtCategoria];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,11 +56,9 @@ static NSString *const SegueLoja = @"segueLoja";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    //self.fetchedResultsController = nil;
-    [self carregarPlistDeLojasComId:identificadorBtn filtradaPor:self.txtCategoria];
-
 }
 
+#pragma mark - Carregar plist
 - (NSArray *) carregarPlistDeLojasComId:(NSString *)identificador filtradaPor:(NSString *)filtro{
     self.listaFiltrada = [[NSArray alloc] init];
     NSString *caminho = [NSString stringWithFormat:@"%@", identificador];
@@ -92,21 +95,24 @@ static NSString *const SegueLoja = @"segueLoja";
                           comEndereco:self.loja.endereco
                             comQuadra:self.loja.quadra
                           comTelefone:self.loja.telefone];
+
     [celula setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
      return celula;
  }
 
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     self.loja = [self.listaFiltrada objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:SegueLoja sender:self.loja];
 }
 
 #pragma mark - Segue
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:SegueLoja]) {
+        DetalheViewController *detalheVC = (DetalheViewController *)[[segue destinationViewController] topViewController];
+        [detalheVC setLoja:sender];
+    }
 }
 
 @end

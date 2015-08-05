@@ -6,11 +6,14 @@
 //  Copyright (c) 2015 Filipe Manuel. All rights reserved.
 //
 
+#import <CoreLocation/CoreLocation.h>
+
 #import "TelaInicialViewController.h"
 #import "RefinarBuscaViewController.h"
 #import "Constantes.h"
 
-@interface TelaInicialViewController ()
+@interface TelaInicialViewController () <CLLocationManagerDelegate>
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @property (nonatomic, strong) NSString *identificador;
 
@@ -26,6 +29,20 @@ static NSString *const SegueTelaInicial = @"segueTelaInicial";
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    @autoreleasepool {
+
+        _locationManager = [[CLLocationManager alloc] init];
+        [_locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+        [_locationManager setDelegate:self];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 #pragma mark - Ação botões iniciais
