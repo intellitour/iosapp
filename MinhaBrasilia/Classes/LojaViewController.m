@@ -39,6 +39,8 @@ static NSString *const SegueLoja = @"segueLoja";
 
     [self carregarPlistDeLojasComId:identificadorBtn
                         filtradaPor:self.txtCategoria];
+
+    [self lojasFiltradasPor:self.txtCategoria];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +58,26 @@ static NSString *const SegueLoja = @"segueLoja";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+}
+
+
+
+-(Loja *)lojasFiltradasPor:(NSString *)filtro {
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Loja"
+                                                         inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+
+    [request setPredicate:[NSPredicate predicateWithFormat:@"categoria = %@", filtro]];
+    
+    NSError *error = nil;
+    NSArray *array = [context executeFetchRequest:request error:&error];
+    if (array == nil)
+    {
+        // Deal with error...
+    }
+    return nil;
 }
 
 #pragma mark - Carregar plist

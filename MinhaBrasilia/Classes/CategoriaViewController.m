@@ -41,13 +41,10 @@ static NSString *const SegueCategorias = @"segueCategorias";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
-    //NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    //self.managedObjectContext = [self managedObjectContext];
 }
 
 - (NSManagedObjectContext *)managedObjectContext {
@@ -78,7 +75,7 @@ static NSString *const SegueCategorias = @"segueCategorias";
     //Criando para cada categoria uma entidade categoria
     self.categoria = [NSEntityDescription insertNewObjectForEntityForName:@"Categoria" inManagedObjectContext:self.managedObjectContext];
 
-    //TODO Criar método para persistir separadamente
+    //TODO: Criar método para persistir separadamente
     [self.categoria setValue:[self.itensDaTabela objectAtIndex:indexPath.row] forKey:@"nome"];
 
     NSError *error = nil;

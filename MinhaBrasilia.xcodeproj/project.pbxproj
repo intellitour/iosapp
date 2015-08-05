@@ -12,15 +12,14 @@
 		A30026421B5DE1D3001FDAD2 /* AsaSul.plist in Resources */ = {isa = PBXBuildFile; fileRef = A30026331B5DE1D3001FDAD2 /* AsaSul.plist */; };
 		A30026431B5DE1D3001FDAD2 /* CategoriaAsaNorte.plist in Resources */ = {isa = PBXBuildFile; fileRef = A30026341B5DE1D3001FDAD2 /* CategoriaAsaNorte.plist */; };
 		A30026441B5DE1D3001FDAD2 /* CategoriaAsaSul.plist in Resources */ = {isa = PBXBuildFile; fileRef = A30026351B5DE1D3001FDAD2 /* CategoriaAsaSul.plist */; };
-		A30026451B5DE1D3001FDAD2 /* Categoria.m in Sources */ = {isa = PBXBuildFile; fileRef = A30026381B5DE1D3001FDAD2 /* Categoria.m */; };
-		A30026461B5DE1D3001FDAD2 /* Loja.m in Sources */ = {isa = PBXBuildFile; fileRef = A300263A1B5DE1D3001FDAD2 /* Loja.m */; };
-		A30026471B5DE1D3001FDAD2 /* Quadra.m in Sources */ = {isa = PBXBuildFile; fileRef = A300263C1B5DE1D3001FDAD2 /* Quadra.m */; };
 		A30026481B5DE1D3001FDAD2 /* icone_tabbar_cerveja_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = A300263E1B5DE1D3001FDAD2 /* icone_tabbar_cerveja_transparent.png */; };
 		A30026491B5DE1D3001FDAD2 /* icone_tabbar_garfofaca_transparente.png in Resources */ = {isa = PBXBuildFile; fileRef = A300263F1B5DE1D3001FDAD2 /* icone_tabbar_garfofaca_transparente.png */; };
 		A300264A1B5DE1D3001FDAD2 /* splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A30026401B5DE1D3001FDAD2 /* splashscreen.png */; };
 		A3528A7F1B6AFCD200DA4F43 /* DetalheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3528A7E1B6AFCD200DA4F43 /* DetalheViewController.m */; };
-		A3528A811B6B1AC300DA4F43 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3528A801B6B1AC300DA4F43 /* CoreLocation.framework */; };
-		A3528A831B6B1ACB00DA4F43 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3528A821B6B1ACB00DA4F43 /* MapKit.framework */; };
+		A35E80191B72C7D6006A98C5 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A35E80181B72C7D6006A98C5 /* Utils.m */; };
+		A35E801C1B72CB04006A98C5 /* Quadra.m in Sources */ = {isa = PBXBuildFile; fileRef = A35E801B1B72CB04006A98C5 /* Quadra.m */; };
+		A35E801F1B72CB04006A98C5 /* Categoria.m in Sources */ = {isa = PBXBuildFile; fileRef = A35E801E1B72CB04006A98C5 /* Categoria.m */; };
+		A35E80221B72CB04006A98C5 /* Loja.m in Sources */ = {isa = PBXBuildFile; fileRef = A35E80211B72CB04006A98C5 /* Loja.m */; };
 		A3B7C2E61B66D605002C6F4B /* CategoriaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B7C2E51B66D605002C6F4B /* CategoriaViewController.m */; };
 		A3B7C2E91B66D801002C6F4B /* RefinarBuscaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B7C2E81B66D801002C6F4B /* RefinarBuscaViewController.m */; };
 		A3B7C2EC1B66FF57002C6F4B /* Constantes.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B7C2EB1B66FF57002C6F4B /* Constantes.m */; };
@@ -56,12 +55,6 @@
 		A30026331B5DE1D3001FDAD2 /* AsaSul.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AsaSul.plist; sourceTree = "<group>"; };
 		A30026341B5DE1D3001FDAD2 /* CategoriaAsaNorte.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CategoriaAsaNorte.plist; sourceTree = "<group>"; };
 		A30026351B5DE1D3001FDAD2 /* CategoriaAsaSul.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CategoriaAsaSul.plist; sourceTree = "<group>"; };
-		A30026371B5DE1D3001FDAD2 /* Categoria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categoria.h; sourceTree = "<group>"; };
-		A30026381B5DE1D3001FDAD2 /* Categoria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categoria.m; sourceTree = "<group>"; };
-		A30026391B5DE1D3001FDAD2 /* Loja.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Loja.h; sourceTree = "<group>"; };
-		A300263A1B5DE1D3001FDAD2 /* Loja.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Loja.m; sourceTree = "<group>"; };
-		A300263B1B5DE1D3001FDAD2 /* Quadra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quadra.h; sourceTree = "<group>"; };
-		A300263C1B5DE1D3001FDAD2 /* Quadra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quadra.m; sourceTree = "<group>"; };
 		A300263E1B5DE1D3001FDAD2 /* icone_tabbar_cerveja_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_tabbar_cerveja_transparent.png; sourceTree = "<group>"; };
 		A300263F1B5DE1D3001FDAD2 /* icone_tabbar_garfofaca_transparente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_tabbar_garfofaca_transparente.png; sourceTree = "<group>"; };
 		A30026401B5DE1D3001FDAD2 /* splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashscreen.png; sourceTree = "<group>"; };
@@ -69,6 +62,14 @@
 		A3528A7E1B6AFCD200DA4F43 /* DetalheViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalheViewController.m; sourceTree = "<group>"; };
 		A3528A801B6B1AC300DA4F43 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A3528A821B6B1ACB00DA4F43 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A35E80171B72C7D6006A98C5 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		A35E80181B72C7D6006A98C5 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		A35E801A1B72CB04006A98C5 /* Quadra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quadra.h; path = MinhaBrasilia/Quadra.h; sourceTree = SOURCE_ROOT; };
+		A35E801B1B72CB04006A98C5 /* Quadra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Quadra.m; path = MinhaBrasilia/Quadra.m; sourceTree = SOURCE_ROOT; };
+		A35E801D1B72CB04006A98C5 /* Categoria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Categoria.h; path = MinhaBrasilia/Categoria.h; sourceTree = SOURCE_ROOT; };
+		A35E801E1B72CB04006A98C5 /* Categoria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Categoria.m; path = MinhaBrasilia/Categoria.m; sourceTree = SOURCE_ROOT; };
+		A35E80201B72CB04006A98C5 /* Loja.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Loja.h; path = MinhaBrasilia/Loja.h; sourceTree = SOURCE_ROOT; };
+		A35E80211B72CB04006A98C5 /* Loja.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Loja.m; path = MinhaBrasilia/Loja.m; sourceTree = SOURCE_ROOT; };
 		A3B7C2E41B66D605002C6F4B /* CategoriaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriaViewController.h; sourceTree = "<group>"; };
 		A3B7C2E51B66D605002C6F4B /* CategoriaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaViewController.m; sourceTree = "<group>"; };
 		A3B7C2E71B66D801002C6F4B /* RefinarBuscaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefinarBuscaViewController.h; sourceTree = "<group>"; };
@@ -110,8 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3528A831B6B1ACB00DA4F43 /* MapKit.framework in Frameworks */,
-				A3528A811B6B1AC300DA4F43 /* CoreLocation.framework in Frameworks */,
 				5891C734627B3D23835B8249 /* libPods-MinhaBrasilia.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,12 +156,12 @@
 		A30026361B5DE1D3001FDAD2 /* Modelos */ = {
 			isa = PBXGroup;
 			children = (
-				A30026371B5DE1D3001FDAD2 /* Categoria.h */,
-				A30026381B5DE1D3001FDAD2 /* Categoria.m */,
-				A30026391B5DE1D3001FDAD2 /* Loja.h */,
-				A300263A1B5DE1D3001FDAD2 /* Loja.m */,
-				A300263B1B5DE1D3001FDAD2 /* Quadra.h */,
-				A300263C1B5DE1D3001FDAD2 /* Quadra.m */,
+				A35E80201B72CB04006A98C5 /* Loja.h */,
+				A35E80211B72CB04006A98C5 /* Loja.m */,
+				A35E801D1B72CB04006A98C5 /* Categoria.h */,
+				A35E801E1B72CB04006A98C5 /* Categoria.m */,
+				A35E801A1B72CB04006A98C5 /* Quadra.h */,
+				A35E801B1B72CB04006A98C5 /* Quadra.m */,
 			);
 			path = Modelos;
 			sourceTree = "<group>";
@@ -200,6 +199,8 @@
 				A3C8E4C21B5DE00C001B547E /* EstabelecimentoViewController.m */,
 				A3B7C2EA1B66FF57002C6F4B /* Constantes.h */,
 				A3B7C2EB1B66FF57002C6F4B /* Constantes.m */,
+				A35E80171B72C7D6006A98C5 /* Utils.h */,
+				A35E80181B72C7D6006A98C5 /* Utils.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -415,18 +416,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3F9C85C1B5DA8F8001ADC7A /* AppDelegate.m in Sources */,
+				A35E80221B72CB04006A98C5 /* Loja.m in Sources */,
+				A35E801C1B72CB04006A98C5 /* Quadra.m in Sources */,
 				A3F9C85F1B5DA8F8001ADC7A /* MinhaBrasilia.xcdatamodeld in Sources */,
-				A30026471B5DE1D3001FDAD2 /* Quadra.m in Sources */,
+				A35E801F1B72CB04006A98C5 /* Categoria.m in Sources */,
 				A3C8E4C81B5DE00C001B547E /* TelaInicialViewController.m in Sources */,
 				A3B7C2E91B66D801002C6F4B /* RefinarBuscaViewController.m in Sources */,
 				A3C8E4C71B5DE00C001B547E /* EstabelecimentoViewController.m in Sources */,
 				A3F9C8621B5DA8F8001ADC7A /* ViewController.m in Sources */,
 				A3DC58D31B6995B400E4D460 /* LojaTableViewCell.m in Sources */,
 				A3B7C2E61B66D605002C6F4B /* CategoriaViewController.m in Sources */,
+				A35E80191B72C7D6006A98C5 /* Utils.m in Sources */,
 				A3528A7F1B6AFCD200DA4F43 /* DetalheViewController.m in Sources */,
-				A30026461B5DE1D3001FDAD2 /* Loja.m in Sources */,
 				A3C8E4C61B5DE00C001B547E /* CelulaEstabelecimentoTableViewCell.m in Sources */,
-				A30026451B5DE1D3001FDAD2 /* Categoria.m in Sources */,
 				A3EB04621B68396200DE7900 /* LojaViewController.m in Sources */,
 				A3F9C8591B5DA8F8001ADC7A /* main.m in Sources */,
 				A3C8E4C51B5DE00C001B547E /* CategoriaAsaSulViewController.m in Sources */,

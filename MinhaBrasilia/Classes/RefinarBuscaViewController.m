@@ -42,7 +42,9 @@ static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
 }
 
 #pragma mark - Plist
-//Método responsável por carregar o arquivo .plist de acordo com o identificador
+/**
+ Método responsável por carregar o arquivo .plist de acordo com o identificador
+ */
 - (NSMutableArray *)carregarPlistDeCategoriasComId:(NSString *)identificador {
     listaArquivoPlist = [[NSMutableArray alloc] init];
     NSString *caminho = [NSString stringWithFormat:@"Categoria%@", identificador];

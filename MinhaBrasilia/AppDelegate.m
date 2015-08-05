@@ -8,6 +8,7 @@
 
 @import GoogleMaps;
 #import "AppDelegate.h"
+#import "Utils.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [GMSServices provideAPIKey:@"API KEY"];
 
-
+    [self criarEntidadeLojaDoPlist:@"AsaNorte"];
+    [self criarEntidadeLojaDoPlist:@"AsaSul"];
 
     return YES;
 }
@@ -126,6 +128,56 @@
             abort();
         }
     }
+}
+
+/**
+ Método resposável por criar as entidades através do plist
+ */
+//TODO: Alterar método para ser o mais genérico possível
+- (void)criarEntidadeLojaDoPlist:(NSString*)plist {
+    //NSString *arquivoPlist = [[NSBundle mainBundle] pathForResource:plist ofType:@"plist"];
+    //NSArray *dicionarioPlist = [NSArray arrayWithContentsOfFile:arquivoPlist];
+    NSArray *dicionarioPlist = [Utils carregarPlist:plist];
+
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+
+    NSArray *atributos = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
+    for (NSDictionary *dicionario in dicionarioPlist) {
+
+        self.loja = [NSEntityDescription insertNewObjectForEntityForName:@"Loja"
+                                                  inManagedObjectContext:context];
+
+        self.categoria = [NSEntityDescription insertNewObjectForEntityForName:@"Categoria"
+                                                       inManagedObjectContext:context];
+
+        self.quadra = [NSEntityDescription insertNewObjectForEntityForName:@"Quadra"
+                                                    inManagedObjectContext:context];
+
+        for (NSString *atributo in atributos) {
+            [self.loja setValue:[dicionario objectForKey:atributo] forKey:atributo];
+        }
+
+        [self.loja setValue:self.categoria forKey:@"categoria"];
+        [self.loja setValue:self.quadra forKey:@"quadra"];
+
+    }
+}
+
+- (void)criarEntidadeCategoriaDoPlist:(NSString*)plist {
+    NSArray *dicionarioPlist = [Utils carregarPlist:plist];
+
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+
+    NSArray *atributos = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
+
 }
 
 @end
