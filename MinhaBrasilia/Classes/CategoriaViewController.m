@@ -101,7 +101,7 @@ static NSString *const SegueCategorias = @"segueCategorias";
 #pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:SegueCategorias]) {
-        LojaViewController *lojaVC = (LojaViewController *)[[segue destinationViewController] topViewController];
+        LojaViewController *lojaVC = [segue destinationViewController];
         [lojaVC setTxtCategoria:sender];
         [lojaVC setIdentificadorBtn:identificadorBtn];
     }

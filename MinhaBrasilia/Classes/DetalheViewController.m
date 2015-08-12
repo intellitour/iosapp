@@ -8,13 +8,12 @@
 
 @import GoogleMaps;
 
-#import <MapKit/MapKit.h>
 #import "DetalheViewController.h"
 
 
 #import "Loja.h"
 
-@interface DetalheViewController () <MKMapViewDelegate>
+@interface DetalheViewController ()
 
 @property (nonatomic, strong) GMSMapView *mapView_;
 @property (weak, nonatomic) IBOutlet UIView *mapaView;

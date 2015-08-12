@@ -11,10 +11,16 @@
 @implementation Utils
 
 
-+ (NSArray *)carregarPlist:(NSString *)plist {
++ (NSArray *)carregarArrayPlist:(NSString *)plist {
     NSString *arquivoPlist = [[NSBundle mainBundle] pathForResource:plist ofType:@"plist"];
+    NSArray *arrayDeConteudo = [NSArray arrayWithContentsOfFile:arquivoPlist];
+    return arrayDeConteudo;
+}
 
-    return [NSArray arrayWithContentsOfFile:arquivoPlist];
++ (NSDictionary *)carregarDicionarioPlist:(NSString *)plist ComChave:(NSString *)chave {
+    NSString *arquivoPlist = [[NSBundle mainBundle] pathForResource:plist ofType:@"plist"];
+    NSDictionary *dicionarioDeConteudo = [NSDictionary dictionaryWithContentsOfFile:arquivoPlist];
+    return [dicionarioDeConteudo objectForKey:chave];
 }
 
 @end

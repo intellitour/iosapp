@@ -6,16 +6,14 @@
 //  Copyright (c) 2015 Filipe Manuel. All rights reserved.
 //
 
-#import <CoreLocation/CoreLocation.h>
-
 #import "TelaInicialViewController.h"
 #import "RefinarBuscaViewController.h"
 #import "Constantes.h"
 
-@interface TelaInicialViewController () <CLLocationManagerDelegate>
-@property (strong, nonatomic) CLLocationManager *locationManager;
-
+@interface TelaInicialViewController ()
 @property (nonatomic, strong) NSString *identificador;
+@property (weak, nonatomic) IBOutlet UIButton *btnAsaSul;
+@property (weak, nonatomic) IBOutlet UIButton *btnAsaNorte;
 
 @end
 
@@ -25,6 +23,7 @@ static NSString *const SegueTelaInicial = @"segueTelaInicial";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,12 +32,11 @@ static NSString *const SegueTelaInicial = @"segueTelaInicial";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    @autoreleasepool {
 
-        _locationManager = [[CLLocationManager alloc] init];
-        [_locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
-        [_locationManager setDelegate:self];
-    }
+    //Criar botões arredondados
+    [self.btnAsaSul.layer setCornerRadius:5];
+    [self.btnAsaNorte.layer setCornerRadius:5];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -64,7 +62,7 @@ static NSString *const SegueTelaInicial = @"segueTelaInicial";
 #pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:SegueTelaInicial]) {
-        RefinarBuscaViewController *refinarBuscaVC = (RefinarBuscaViewController *)[[segue destinationViewController] topViewController];
+        RefinarBuscaViewController *refinarBuscaVC = [segue destinationViewController];
         [refinarBuscaVC setIdentificadorBtn:identificador];
     }
 }

@@ -12,5 +12,6 @@
 
 extern NSString *const IdentificadorAsaSul;
 extern NSString *const IdentificadorAsaNorte;
+extern NSString *const API_KEY;
 
 @end

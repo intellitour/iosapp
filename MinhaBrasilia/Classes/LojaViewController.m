@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *buscaLojas;
 
 @property (nonatomic, strong) Loja *loja;
+@property (nonatomic, strong) Categoria *categoria;
 
 
 @end
@@ -63,13 +64,14 @@ static NSString *const SegueLoja = @"segueLoja";
 
 
 -(Loja *)lojasFiltradasPor:(NSString *)filtro {
+
     NSManagedObjectContext *context = [self managedObjectContext];
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Loja"
                                                          inManagedObjectContext:context];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDescription];
 
-    [request setPredicate:[NSPredicate predicateWithFormat:@"categoria = %@", filtro]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"categoria.nome = %@", filtro]];
     
     NSError *error = nil;
     NSArray *array = [context executeFetchRequest:request error:&error];
@@ -132,7 +134,7 @@ static NSString *const SegueLoja = @"segueLoja";
 #pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:SegueLoja]) {
-        DetalheViewController *detalheVC = (DetalheViewController *)[[segue destinationViewController] topViewController];
+        DetalheViewController *detalheVC = [segue destinationViewController];
         [detalheVC setLoja:sender];
     }
 }

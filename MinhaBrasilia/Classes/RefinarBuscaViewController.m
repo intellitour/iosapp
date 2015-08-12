@@ -13,6 +13,8 @@
 @interface RefinarBuscaViewController ()
 
 @property (nonatomic, strong) NSMutableArray *listaArquivoPlist;
+@property (weak, nonatomic) IBOutlet UIButton *btnCategorias;
+@property (weak, nonatomic) IBOutlet UIButton *btnQuadras;
 
 @end
 
@@ -24,6 +26,13 @@ static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [self.btnCategorias.layer setCornerRadius:5];
+    [self.btnQuadras.layer setCornerRadius:5];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +66,7 @@ static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
 #pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:SegueRefinarBusca]) {
-        CategoriaViewController *categoriaVC = (CategoriaViewController *)[[segue destinationViewController] topViewController];
+        CategoriaViewController *categoriaVC = [segue destinationViewController];
         [categoriaVC setItensDaTabela:listaDeCategorias];
         [categoriaVC setIdentificadorBtn:identificadorBtn];
     }

@@ -10,7 +10,7 @@
 
 @interface Utils : NSObject
 
-+ (NSArray *)carregarPlist:(NSString *)plist;
-
++ (NSArray *)carregarArrayPlist:(NSString *)plist;
++ (NSDictionary *)carregarDicionarioPlist:(NSString *)plist ComChave:(NSString *)chave;
 
 @end

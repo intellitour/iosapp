@@ -9,6 +9,8 @@
 @import GoogleMaps;
 #import "AppDelegate.h"
 #import "Utils.h"
+#import "Constantes.h"
+
 
 @interface AppDelegate ()
 
@@ -18,10 +20,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [GMSServices provideAPIKey:@"API KEY"];
+    [GMSServices provideAPIKey:API_KEY];
 
-    [self criarEntidadeLojaDoPlist:@"AsaNorte"];
-    [self criarEntidadeLojaDoPlist:@"AsaSul"];
+    //[self criarEntidadeLojaDoPlist:@"AsaNorte"];
+    //[self criarEntidadeLojaDoPlist:@"AsaSul"];
+    //[self criarEntidadeCategoriaDoPlist:@"CategoriaAsaNorte"];
+    [self carregarEntidadeDeLojasAsaNorte];
 
     return YES;
 }
@@ -135,9 +139,7 @@
  */
 //TODO: Alterar método para ser o mais genérico possível
 - (void)criarEntidadeLojaDoPlist:(NSString*)plist {
-    //NSString *arquivoPlist = [[NSBundle mainBundle] pathForResource:plist ofType:@"plist"];
-    //NSArray *dicionarioPlist = [NSArray arrayWithContentsOfFile:arquivoPlist];
-    NSArray *dicionarioPlist = [Utils carregarPlist:plist];
+    NSArray *arrayPlist = [Utils carregarArrayPlist:plist];
 
     NSManagedObjectContext *context = nil;
     id delegate = [[UIApplication sharedApplication] delegate];
@@ -146,7 +148,7 @@
     }
 
     NSArray *atributos = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
-    for (NSDictionary *dicionario in dicionarioPlist) {
+    for (NSDictionary *dicionario in arrayPlist) {
 
         self.loja = [NSEntityDescription insertNewObjectForEntityForName:@"Loja"
                                                   inManagedObjectContext:context];
@@ -167,8 +169,38 @@
     }
 }
 
+- (void)criarEntidades:(NSManagedObjectContext *)context {
+    self.loja = [NSEntityDescription insertNewObjectForEntityForName:@"Loja" inManagedObjectContext:context];
+    self.categoria = [NSEntityDescription insertNewObjectForEntityForName:@"Categoria" inManagedObjectContext:context];
+    self.quadra = [NSEntityDescription insertNewObjectForEntityForName:@"Quadra" inManagedObjectContext:context];
+}
+
+- (void)carregarEntidadeDeLojasAsaNorte {
+    NSManagedObjectContext *context = [self managedObjectContext];
+
+
+    NSArray *arrayLojasAsaNorte = [Utils carregarArrayPlist:IdentificadorAsaNorte];
+    NSArray *atributosComuns = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
+
+    for (NSDictionary *dicionario in arrayLojasAsaNorte) {
+
+        [self criarEntidades:context];
+
+        //Loop para atributos comuns
+        for (NSString *atributo in atributosComuns) {
+            [self.loja setValue:[dicionario objectForKey:atributo] forKey:atributo];
+        }
+
+        [self.categoria setValue:[dicionario objectForKey:@"categoria"] forKey:@"nome"];
+        [self.loja setValue:self.categoria forKey:@"categoria"];
+
+        [self.quadra setValue:[dicionario objectForKey:@"quadra"] forKey:@"nome"];
+        [self.loja setValue:self.quadra forKey:@"quadra"];
+    }
+}
+
 - (void)criarEntidadeCategoriaDoPlist:(NSString*)plist {
-    NSArray *dicionarioPlist = [Utils carregarPlist:plist];
+    NSDictionary *dicionarioPlist = [Utils carregarDicionarioPlist:plist ComChave:@"categorias"];
 
     NSManagedObjectContext *context = nil;
     id delegate = [[UIApplication sharedApplication] delegate];
@@ -176,8 +208,9 @@
         context = [delegate managedObjectContext];
     }
 
-    NSArray *atributos = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
-
+    for (NSString *atributo in dicionarioPlist) {
+        [self.categoria setValue:atributo forKey:@"nome"];
+    }
 }
 
 @end
