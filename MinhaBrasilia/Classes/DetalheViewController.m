@@ -8,9 +8,8 @@
 
 @import GoogleMaps;
 
+#import "DesignUtils.h"
 #import "DetalheViewController.h"
-
-
 #import "Loja.h"
 
 @interface DetalheViewController ()
@@ -30,7 +29,7 @@
                                                             longitude:-47.882587
                                                                  zoom:12];
 
-    [self.mapView_ setMinZoom:10 maxZoom:15];
+    //[self.mapView_ setMinZoom:10 maxZoom:15];
 
     self.mapView_ = [GMSMapView mapWithFrame:self.mapaView.bounds camera:camera];
     self.mapView_.myLocationEnabled = YES;
@@ -42,6 +41,15 @@
     marker.title = [self.loja valueForKey:@"titulo"];
     marker.snippet = [self.loja valueForKey:@"subtitulo"];
     marker.map = self.mapView_;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [DesignUtils customizarNavBar:self.navigationController
+                     CorBtnVoltar:[UIColor whiteColor]
+                        CorNavBar:[UIColor colorWithRed:0.012 green:0.651 blue:0.471 alpha:1]
+                      FonteTitulo:@"HelveticaNeue-CondensedBlack"];
 }
 
 - (void)didReceiveMemoryWarning {

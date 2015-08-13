@@ -10,8 +10,8 @@
 
 @interface Constantes : NSObject
 
-extern NSString *const IdentificadorAsaSul;
-extern NSString *const IdentificadorAsaNorte;
-extern NSString *const API_KEY;
+extern NSString *const kIdentificadorAsaSul;
+extern NSString *const kIdentificadorAsaNorte;
+extern NSString *const kApiKey;
 
 @end

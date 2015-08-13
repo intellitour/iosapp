@@ -11,15 +11,22 @@
 @implementation LojaTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    [self.layer setCornerRadius:7.0f];
+    [self.layer setMasksToBounds:YES];
+    [self.layer setBorderWidth:0.2f];
+    [self setBackgroundColor:[UIColor whiteColor]];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
-//-preencherCelulaCom:vlTitulo:vlSubtitulo:vlCategoria:vlEndereco:vlQuadra:vlTelefone
+
+- (void)setFrame:(CGRect)frame {
+    frame.origin.y += 4;
+    frame.size.height -= 2 * 4;
+    [super setFrame:frame];
+}
 
 - (void) preencherCelulaComTitulo:(NSString *)vlTitulo comSubtitulo:(NSString*)vlSubtitulo comCategoria:(Categoria*)vlCategoria comEndereco:(NSString*)vlEndereco comQuadra:(Quadra*)vlQuadra comTelefone:(NSString*)vlTelefone{
     if (!isEmpty(vlTitulo)) {

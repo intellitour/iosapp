@@ -20,13 +20,14 @@
 		A3562BA11B7ABD870029EA6F /* icone_detalhes_telefone.png in Resources */ = {isa = PBXBuildFile; fileRef = A3562BA01B7ABD870029EA6F /* icone_detalhes_telefone.png */; };
 		A3562BA31B7AC08C0029EA6F /* icone_detalhes_quadra.png in Resources */ = {isa = PBXBuildFile; fileRef = A3562BA21B7AC08C0029EA6F /* icone_detalhes_quadra.png */; };
 		A3562BA51B7AC8BD0029EA6F /* icone_detalhes_categoria.png in Resources */ = {isa = PBXBuildFile; fileRef = A3562BA41B7AC8BD0029EA6F /* icone_detalhes_categoria.png */; };
-		A35E80191B72C7D6006A98C5 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A35E80181B72C7D6006A98C5 /* Utils.m */; };
 		A35E801C1B72CB04006A98C5 /* Quadra.m in Sources */ = {isa = PBXBuildFile; fileRef = A35E801B1B72CB04006A98C5 /* Quadra.m */; };
 		A35E801F1B72CB04006A98C5 /* Categoria.m in Sources */ = {isa = PBXBuildFile; fileRef = A35E801E1B72CB04006A98C5 /* Categoria.m */; };
 		A35E80221B72CB04006A98C5 /* Loja.m in Sources */ = {isa = PBXBuildFile; fileRef = A35E80211B72CB04006A98C5 /* Loja.m */; };
+		A3B438DD1B7BF9800006E19D /* Constantes.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B438DC1B7BF9800006E19D /* Constantes.m */; };
+		A3B438E11B7BF98C0006E19D /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B438E01B7BF98C0006E19D /* Utils.m */; };
+		A3B438E41B7BF9BD0006E19D /* DesignUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B438E31B7BF9BD0006E19D /* DesignUtils.m */; };
 		A3B7C2E61B66D605002C6F4B /* CategoriaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B7C2E51B66D605002C6F4B /* CategoriaViewController.m */; };
 		A3B7C2E91B66D801002C6F4B /* RefinarBuscaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B7C2E81B66D801002C6F4B /* RefinarBuscaViewController.m */; };
-		A3B7C2EC1B66FF57002C6F4B /* Constantes.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B7C2EB1B66FF57002C6F4B /* Constantes.m */; };
 		A3B9AE5E1B797208005A02F4 /* icone_tela_inicial.png in Resources */ = {isa = PBXBuildFile; fileRef = A3B9AE5D1B797208005A02F4 /* icone_tela_inicial.png */; };
 		A3C8E4C81B5DE00C001B547E /* TelaInicialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8E4C41B5DE00C001B547E /* TelaInicialViewController.m */; };
 		A3DC58D31B6995B400E4D460 /* LojaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3DC58D21B6995B400E4D460 /* LojaTableViewCell.m */; };
@@ -69,20 +70,22 @@
 		A3562BA01B7ABD870029EA6F /* icone_detalhes_telefone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_detalhes_telefone.png; sourceTree = "<group>"; };
 		A3562BA21B7AC08C0029EA6F /* icone_detalhes_quadra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_detalhes_quadra.png; sourceTree = "<group>"; };
 		A3562BA41B7AC8BD0029EA6F /* icone_detalhes_categoria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_detalhes_categoria.png; sourceTree = "<group>"; };
-		A35E80171B72C7D6006A98C5 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
-		A35E80181B72C7D6006A98C5 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		A35E801A1B72CB04006A98C5 /* Quadra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quadra.h; path = MinhaBrasilia/Quadra.h; sourceTree = SOURCE_ROOT; };
 		A35E801B1B72CB04006A98C5 /* Quadra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Quadra.m; path = MinhaBrasilia/Quadra.m; sourceTree = SOURCE_ROOT; };
 		A35E801D1B72CB04006A98C5 /* Categoria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Categoria.h; path = MinhaBrasilia/Categoria.h; sourceTree = SOURCE_ROOT; };
 		A35E801E1B72CB04006A98C5 /* Categoria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Categoria.m; path = MinhaBrasilia/Categoria.m; sourceTree = SOURCE_ROOT; };
 		A35E80201B72CB04006A98C5 /* Loja.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Loja.h; path = MinhaBrasilia/Loja.h; sourceTree = SOURCE_ROOT; };
 		A35E80211B72CB04006A98C5 /* Loja.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Loja.m; path = MinhaBrasilia/Loja.m; sourceTree = SOURCE_ROOT; };
+		A3B438DB1B7BF9800006E19D /* Constantes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constantes.h; sourceTree = "<group>"; };
+		A3B438DC1B7BF9800006E19D /* Constantes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constantes.m; sourceTree = "<group>"; };
+		A3B438DF1B7BF98C0006E19D /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		A3B438E01B7BF98C0006E19D /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		A3B438E21B7BF9BD0006E19D /* DesignUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignUtils.h; sourceTree = "<group>"; };
+		A3B438E31B7BF9BD0006E19D /* DesignUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignUtils.m; sourceTree = "<group>"; };
 		A3B7C2E41B66D605002C6F4B /* CategoriaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriaViewController.h; sourceTree = "<group>"; };
 		A3B7C2E51B66D605002C6F4B /* CategoriaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaViewController.m; sourceTree = "<group>"; };
 		A3B7C2E71B66D801002C6F4B /* RefinarBuscaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefinarBuscaViewController.h; sourceTree = "<group>"; };
 		A3B7C2E81B66D801002C6F4B /* RefinarBuscaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefinarBuscaViewController.m; sourceTree = "<group>"; };
-		A3B7C2EA1B66FF57002C6F4B /* Constantes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constantes.h; sourceTree = "<group>"; };
-		A3B7C2EB1B66FF57002C6F4B /* Constantes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constantes.m; sourceTree = "<group>"; };
 		A3B9AE5D1B797208005A02F4 /* icone_tela_inicial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_tela_inicial.png; sourceTree = "<group>"; };
 		A3C8E4C31B5DE00C001B547E /* TelaInicialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelaInicialViewController.h; sourceTree = "<group>"; };
 		A3C8E4C41B5DE00C001B547E /* TelaInicialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelaInicialViewController.m; sourceTree = "<group>"; };
@@ -184,9 +187,31 @@
 			path = Imagens;
 			sourceTree = "<group>";
 		};
+		A3B438DA1B7BF9800006E19D /* Constantes */ = {
+			isa = PBXGroup;
+			children = (
+				A3B438DB1B7BF9800006E19D /* Constantes.h */,
+				A3B438DC1B7BF9800006E19D /* Constantes.m */,
+			);
+			path = Constantes;
+			sourceTree = "<group>";
+		};
+		A3B438DE1B7BF98C0006E19D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A3B438DF1B7BF98C0006E19D /* Utils.h */,
+				A3B438E01B7BF98C0006E19D /* Utils.m */,
+				A3B438E21B7BF9BD0006E19D /* DesignUtils.h */,
+				A3B438E31B7BF9BD0006E19D /* DesignUtils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		A3C8E4BC1B5DE00C001B547E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A3B438DE1B7BF98C0006E19D /* Utils */,
+				A3B438DA1B7BF9800006E19D /* Constantes */,
 				A3C8E4C31B5DE00C001B547E /* TelaInicialViewController.h */,
 				A3C8E4C41B5DE00C001B547E /* TelaInicialViewController.m */,
 				A3B7C2E71B66D801002C6F4B /* RefinarBuscaViewController.h */,
@@ -199,10 +224,6 @@
 				A3DC58D21B6995B400E4D460 /* LojaTableViewCell.m */,
 				A3528A7D1B6AFCD200DA4F43 /* DetalheViewController.h */,
 				A3528A7E1B6AFCD200DA4F43 /* DetalheViewController.m */,
-				A3B7C2EA1B66FF57002C6F4B /* Constantes.h */,
-				A3B7C2EB1B66FF57002C6F4B /* Constantes.m */,
-				A35E80171B72C7D6006A98C5 /* Utils.h */,
-				A35E80181B72C7D6006A98C5 /* Utils.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -425,18 +446,19 @@
 				A3F9C85C1B5DA8F8001ADC7A /* AppDelegate.m in Sources */,
 				A35E80221B72CB04006A98C5 /* Loja.m in Sources */,
 				A35E801C1B72CB04006A98C5 /* Quadra.m in Sources */,
+				A3B438E41B7BF9BD0006E19D /* DesignUtils.m in Sources */,
 				A3F9C85F1B5DA8F8001ADC7A /* MinhaBrasilia.xcdatamodeld in Sources */,
 				A35E801F1B72CB04006A98C5 /* Categoria.m in Sources */,
 				A3C8E4C81B5DE00C001B547E /* TelaInicialViewController.m in Sources */,
 				A3B7C2E91B66D801002C6F4B /* RefinarBuscaViewController.m in Sources */,
 				A3F9C8621B5DA8F8001ADC7A /* ViewController.m in Sources */,
 				A3DC58D31B6995B400E4D460 /* LojaTableViewCell.m in Sources */,
+				A3B438DD1B7BF9800006E19D /* Constantes.m in Sources */,
 				A3B7C2E61B66D605002C6F4B /* CategoriaViewController.m in Sources */,
-				A35E80191B72C7D6006A98C5 /* Utils.m in Sources */,
 				A3528A7F1B6AFCD200DA4F43 /* DetalheViewController.m in Sources */,
 				A3EB04621B68396200DE7900 /* LojaViewController.m in Sources */,
 				A3F9C8591B5DA8F8001ADC7A /* main.m in Sources */,
-				A3B7C2EC1B66FF57002C6F4B /* Constantes.m in Sources */,
+				A3B438E11B7BF98C0006E19D /* Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

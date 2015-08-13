@@ -10,9 +10,9 @@
 #import "CategoriaViewController.h"
 #import "LojaTableViewCell.h"
 #import "DetalheViewController.h"
-
 #import "Categoria.h"
 #import "Loja.h"
+#import "DesignUtils.h"
 
 @interface LojaViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableViewLojas;
@@ -38,6 +38,8 @@ static NSString *const SegueLoja = @"segueLoja";
     [self.tableViewLojas setDelegate:self];
     [self.tableViewLojas setDataSource:self];
 
+    [self.tableViewLojas setBackgroundColor:[UIColor colorWithRed:0.949 green:0.945 blue:0.937 alpha:1]];
+
     [self carregarPlistDeLojasComId:identificadorBtn
                         filtradaPor:self.txtCategoria];
 
@@ -59,6 +61,11 @@ static NSString *const SegueLoja = @"segueLoja";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
+    [DesignUtils customizarNavBar:self.navigationController
+                     CorBtnVoltar:[UIColor whiteColor]
+                        CorNavBar:[UIColor colorWithRed:0.012 green:0.651 blue:0.471 alpha:1]
+                      FonteTitulo:@"HelveticaNeue-CondensedBlack"];
 }
 
 

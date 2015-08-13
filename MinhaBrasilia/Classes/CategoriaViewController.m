@@ -9,11 +9,9 @@
 #import "CategoriaViewController.h"
 #import "RefinarBuscaViewController.h"
 #import "LojaViewController.h"
-
 #import "Categoria.h"
-
 #import "Constantes.h"
-
+#import "DesignUtils.h"
 
 @interface CategoriaViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableViewCategorias;
@@ -45,6 +43,11 @@ static NSString *const SegueCategorias = @"segueCategorias";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
+    [DesignUtils customizarNavBar:self.navigationController
+                     CorBtnVoltar:[UIColor whiteColor]
+                        CorNavBar:[UIColor colorWithRed:0.012 green:0.651 blue:0.471 alpha:1]
+                      FonteTitulo:@"HelveticaNeue-CondensedBlack"];
 }
 
 - (NSManagedObjectContext *)managedObjectContext {

@@ -10,8 +10,8 @@
 
 @implementation Constantes
 
-NSString *const IdentificadorAsaSul = @"AsaSul";
-NSString *const IdentificadorAsaNorte = @"AsaNorte";
-NSString *const API_KEY = @"AIzaSyCvNIk8MhtF-SVRQPZfOMMyC1mr0oDG6_c";
+NSString *const kIdentificadorAsaSul = @"AsaSul";
+NSString *const kIdentificadorAsaNorte = @"AsaNorte";
+NSString *const kApiKey = @"AIzaSyCvNIk8MhtF-SVRQPZfOMMyC1mr0oDG6_c";
 
 @end

@@ -9,6 +9,7 @@
 #import "RefinarBuscaViewController.h"
 #import "CategoriaViewController.h"
 #import "Constantes.h"
+#import "DesignUtils.h"
 
 @interface RefinarBuscaViewController ()
 
@@ -31,8 +32,20 @@ static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    [self.btnCategorias.layer setCornerRadius:5];
-    [self.btnQuadras.layer setCornerRadius:5];
+    //Botões
+    [DesignUtils customizarBotao:self.btnCategorias
+                           CorBg:[UIColor colorWithRed:0.361 green:0.592 blue:0.749 alpha:1]
+                       CorTitulo:[UIColor whiteColor] Round:5];
+    
+    [DesignUtils customizarBotao:self.btnQuadras
+                           CorBg:[UIColor colorWithRed:0.361 green:0.592 blue:0.749 alpha:1]
+                       CorTitulo:[UIColor whiteColor] Round:5];
+
+    //NavigationBar
+    [DesignUtils customizarNavBar:self.navigationController
+                     CorBtnVoltar:[UIColor colorWithRed:0.925 green:0.925 blue:0.925 alpha:1]
+                        CorNavBar:[UIColor colorWithRed:0.012 green:0.651 blue:0.471 alpha:1]
+                      FonteTitulo:@"HelveticaNeue-CondensedBlack"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,9 +54,9 @@ static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
 
 #pragma mark - Carregar categorias
 - (IBAction)carregarCategorias:(id)sender {
-    if ([identificadorBtn isEqualToString:IdentificadorAsaNorte]) {
+    if ([identificadorBtn isEqualToString:kIdentificadorAsaNorte]) {
         listaDeCategorias = [self carregarPlistDeCategoriasComId:identificadorBtn];
-    } else if ([identificadorBtn isEqualToString:IdentificadorAsaSul]) {
+    } else if ([identificadorBtn isEqualToString:kIdentificadorAsaSul]) {
         listaDeCategorias = [self carregarPlistDeCategoriasComId:identificadorBtn];
     }
 

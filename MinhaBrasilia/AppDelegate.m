@@ -20,7 +20,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [GMSServices provideAPIKey:API_KEY];
+    [GMSServices provideAPIKey:kApiKey];
 
     //[self criarEntidadeLojaDoPlist:@"AsaNorte"];
     //[self criarEntidadeLojaDoPlist:@"AsaSul"];
@@ -179,7 +179,7 @@
     NSManagedObjectContext *context = [self managedObjectContext];
 
 
-    NSArray *arrayLojasAsaNorte = [Utils carregarArrayPlist:IdentificadorAsaNorte];
+    NSArray *arrayLojasAsaNorte = [Utils carregarArrayPlist:kIdentificadorAsaNorte];
     NSArray *atributosComuns = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
 
     for (NSDictionary *dicionario in arrayLojasAsaNorte) {
