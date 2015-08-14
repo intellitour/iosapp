@@ -14,9 +14,12 @@
 
 @interface AppDelegate ()
 
+@property (strong, nonatomic) NSString* listaCarregada;
+
 @end
 
 @implementation AppDelegate
+@synthesize listaCarregada;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -25,7 +28,9 @@
     //[self criarEntidadeLojaDoPlist:@"AsaNorte"];
     //[self criarEntidadeLojaDoPlist:@"AsaSul"];
     //[self criarEntidadeCategoriaDoPlist:@"CategoriaAsaNorte"];
+
     [self carregarEntidadeDeLojasAsaNorte];
+    [self carregarEntidadeDeLojasAsaSul];
 
     return YES;
 }
@@ -176,26 +181,56 @@
 }
 
 - (void)carregarEntidadeDeLojasAsaNorte {
-    NSManagedObjectContext *context = [self managedObjectContext];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"listaCarregadaAsaNorte"] == nil) {
+        NSManagedObjectContext *context = [self managedObjectContext];
 
+        NSArray *arrayLojasAsaNorte = [Utils carregarArrayPlist:kIdentificadorAsaNorte];
+        NSArray *atributosComuns = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
 
-    NSArray *arrayLojasAsaNorte = [Utils carregarArrayPlist:kIdentificadorAsaNorte];
-    NSArray *atributosComuns = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
+        for (NSDictionary *dicionario in arrayLojasAsaNorte) {
 
-    for (NSDictionary *dicionario in arrayLojasAsaNorte) {
+            [self criarEntidades:context];
 
-        [self criarEntidades:context];
+            //Loop para atributos comuns
+            for (NSString *atributo in atributosComuns) {
+                [self.loja setValue:[dicionario objectForKey:atributo] forKey:atributo];
+            }
 
-        //Loop para atributos comuns
-        for (NSString *atributo in atributosComuns) {
-            [self.loja setValue:[dicionario objectForKey:atributo] forKey:atributo];
+            [self.categoria setValue:[dicionario objectForKey:@"categoria"] forKey:@"nome"];
+            [self.loja setValue:self.categoria forKey:@"categoria"];
+
+            [self.quadra setValue:[dicionario objectForKey:@"quadra"] forKey:@"nome"];
+            [self.loja setValue:self.quadra forKey:@"quadra"];
         }
 
-        [self.categoria setValue:[dicionario objectForKey:@"categoria"] forKey:@"nome"];
-        [self.loja setValue:self.categoria forKey:@"categoria"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"listaCarregadaAsaNorte"];
+    }
+}
 
-        [self.quadra setValue:[dicionario objectForKey:@"quadra"] forKey:@"nome"];
-        [self.loja setValue:self.quadra forKey:@"quadra"];
+- (void)carregarEntidadeDeLojasAsaSul {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"listaCarregadaAsaSul"] == nil) {
+        NSManagedObjectContext *context = [self managedObjectContext];
+
+        NSArray *arrayLojasAsaSul = [Utils carregarArrayPlist:kIdentificadorAsaSul];
+        NSArray *atributosComuns = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
+
+        for (NSDictionary *dicionario in arrayLojasAsaSul) {
+
+            [self criarEntidades:context];
+
+            //Loop para atributos comuns
+            for (NSString *atributo in atributosComuns) {
+                [self.loja setValue:[dicionario objectForKey:atributo] forKey:atributo];
+            }
+
+            [self.categoria setValue:[dicionario objectForKey:@"categoria"] forKey:@"nome"];
+            [self.loja setValue:self.categoria forKey:@"categoria"];
+
+            [self.quadra setValue:[dicionario objectForKey:@"quadra"] forKey:@"nome"];
+            [self.loja setValue:self.quadra forKey:@"quadra"];
+        }
+
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"listaCarregadaAsaSul"];
     }
 }
 

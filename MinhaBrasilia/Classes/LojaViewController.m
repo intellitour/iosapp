@@ -68,25 +68,20 @@ static NSString *const SegueLoja = @"segueLoja";
                       FonteTitulo:@"HelveticaNeue-CondensedBlack"];
 }
 
-
-
--(Loja *)lojasFiltradasPor:(NSString *)filtro {
-
+-(NSArray *)lojasFiltradasPor:(NSString *)filtro {
+    NSArray *fetchedObjects;
     NSManagedObjectContext *context = [self managedObjectContext];
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Loja"
-                                                         inManagedObjectContext:context];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
+    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Loja"  inManagedObjectContext: context];
+    [fetch setEntity:entityDescription];
+    [fetch setPredicate:[NSPredicate predicateWithFormat:@"categoria.nome = %@", filtro]];
+    NSError * error = nil;
+    fetchedObjects = [context executeFetchRequest:fetch error:&error];
 
-    [request setPredicate:[NSPredicate predicateWithFormat:@"categoria.nome = %@", filtro]];
-    
-    NSError *error = nil;
-    NSArray *array = [context executeFetchRequest:request error:&error];
-    if (array == nil)
-    {
-        // Deal with error...
+    for (Loja *loja in fetchedObjects) {
+        NSLog(@"%@",loja.titulo);
     }
-    return nil;
+    return fetchedObjects = fetchedObjects.count > 1 ? fetchedObjects : nil;
 }
 
 #pragma mark - Carregar plist

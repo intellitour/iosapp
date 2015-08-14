@@ -38,8 +38,9 @@ static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
                        CorTitulo:[UIColor whiteColor] Round:5];
     
     [DesignUtils customizarBotao:self.btnQuadras
-                           CorBg:[UIColor colorWithRed:0.361 green:0.592 blue:0.749 alpha:1]
-                       CorTitulo:[UIColor whiteColor] Round:5];
+                           CorBg:[UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1]
+                       CorTitulo:[UIColor colorWithRed:0.671 green:0.718 blue:0.718 alpha:1]
+                           Round:5];
 
     //NavigationBar
     [DesignUtils customizarNavBar:self.navigationController
