@@ -23,4 +23,13 @@
     return [dicionarioDeConteudo objectForKey:chave];
 }
 
++ (BOOL) isStringVazia : (NSString *)string {
+    if([string length] == 0 || [string isKindOfClass:[NSNull class]] ||
+       [string isEqualToString:@""] || [string  isEqualToString:NULL]  ||
+       string == nil) {
+        return YES;
+    }
+    return NO;
+}
+
 @end

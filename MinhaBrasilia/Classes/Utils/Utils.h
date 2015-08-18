@@ -12,5 +12,6 @@
 
 + (NSArray *)carregarArrayPlist:(NSString *)plist;
 + (NSDictionary *)carregarDicionarioPlist:(NSString *)plist ComChave:(NSString *)chave;
++ (BOOL) isStringVazia : (NSString *)string;
 
 @end

@@ -81,7 +81,7 @@ static NSString *const SegueLoja = @"segueLoja";
     for (Loja *loja in fetchedObjects) {
         NSLog(@"%@",loja.titulo);
     }
-    return fetchedObjects = fetchedObjects.count > 1 ? fetchedObjects : nil;
+    return self.listaFiltrada2 = fetchedObjects.count > 1 ? fetchedObjects : nil;
 }
 
 #pragma mark - Carregar plist
@@ -102,7 +102,7 @@ static NSString *const SegueLoja = @"segueLoja";
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
      LojaTableViewCell *celula = [tableView dequeueReusableCellWithIdentifier:IdentificadorCelula
                                                                 forIndexPath:indexPath];
-
+     /*
      self.listaFiltrada = [self carregarPlistDeLojasComId:identificadorBtn filtradaPor:self.txtCategoria];
 
      self.loja = [NSEntityDescription insertNewObjectForEntityForName:@"Loja" inManagedObjectContext:self.managedObjectContext];
@@ -113,14 +113,18 @@ static NSString *const SegueLoja = @"segueLoja";
      [self.loja setValue:[[self.listaFiltrada objectAtIndex:indexPath.row] objectForKey:@"endereco"] forKey:@"endereco"];
      [self.loja setValue:nil forKey:@"quadra"];
      [self.loja setValue:[[self.listaFiltrada objectAtIndex:indexPath.row]  objectForKey:@"telefone"] forKey:@"telefone"];
+      */
 
 
-     [celula preencherCelulaComTitulo:self.loja.titulo
-                         comSubtitulo:self.loja.subtitulo
-                         comCategoria:self.loja.categoria
-                          comEndereco:self.loja.endereco
-                            comQuadra:self.loja.quadra
-                          comTelefone:self.loja.telefone];
+     //[self.listaFiltrada2 objectAtIndex:indexPath.section];
+     Loja *loja = [self.listaFiltrada2 objectAtIndex:indexPath.row];
+
+     [celula preencherCelulaComTitulo:loja.titulo
+                         comSubtitulo:loja.subtitulo
+                         comCategoria:loja.categoria.nome
+                          comEndereco:loja.endereco
+                            comQuadra:loja.quadra.nome
+                          comTelefone:loja.telefone];
 
     [celula setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
      return celula;

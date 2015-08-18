@@ -7,6 +7,7 @@
 //
 
 #import "LojaTableViewCell.h"
+#import "Utils.h"
 
 @implementation LojaTableViewCell
 
@@ -30,30 +31,26 @@
     [super setFrame:frame];
 }
 
-- (void) preencherCelulaComTitulo:(NSString *)vlTitulo comSubtitulo:(NSString*)vlSubtitulo comCategoria:(Categoria*)vlCategoria comEndereco:(NSString*)vlEndereco comQuadra:(Quadra*)vlQuadra comTelefone:(NSString*)vlTelefone{
-    if (!isEmpty(vlTitulo)) {
+- (void) preencherCelulaComTitulo:(NSString *)vlTitulo comSubtitulo:(NSString*)vlSubtitulo comCategoria:(NSString*)vlCategoria comEndereco:(NSString*)vlEndereco comQuadra:(NSString*)vlQuadra comTelefone:(NSString*)vlTelefone {
+    
+    if (![Utils isStringVazia:vlTitulo]) {
         [self.vlTitulo setText:vlTitulo];
     }
-    if (!isEmpty(vlSubtitulo)) {
+    if (![Utils isStringVazia:vlSubtitulo]) {
         [self.vlSubtitulo setText:vlSubtitulo];
     }
-    if (!isEmpty(vlCategoria)) {
-        [self.vlCategoria setValue:vlCategoria forKey:@"nome"];
+    if (![Utils isStringVazia:vlCategoria]) {
+        [self.vlCategoria setText:vlCategoria];
     }
-    if (!isEmpty(vlEndereco)) {
+    if (![Utils isStringVazia:vlEndereco]) {
         [self.vlEndereco setText:vlEndereco];
     }
-    if (!isEmpty(vlQuadra)) {
-        [self.vlQuadra setValue:vlQuadra forKey:@"nome"];
+    if (![Utils isStringVazia:vlQuadra]) {
+        [self.vlQuadra setText:vlQuadra];
     }
-    if (!isEmpty(vlTelefone)) {
+    if (![Utils isStringVazia:vlTelefone]) {
         [self.vlTelefone setText:vlTelefone];
     }
 }
 
-static inline BOOL isEmpty(id objeto) {
-    return objeto == nil ||
-    ([objeto respondsToSelector:@selector(length)] && [(NSData *)objeto length] == 0) ||
-    ([objeto respondsToSelector:@selector(count)] && [(NSArray *)objeto count] == 0);
-}
 @end
