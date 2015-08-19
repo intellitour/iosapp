@@ -10,6 +10,8 @@
 #import "RefinarBuscaViewController.h"
 #import "Constantes.h"
 #import "DesignUtils.h"
+#import "Utils.h"
+#import "AsaNorte.h"
 
 @interface TelaInicialViewController ()
 @property (nonatomic, strong) NSString *identificador;
@@ -17,10 +19,18 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnAsaNorte;
 @property (weak, nonatomic) IBOutlet UIImageView *imgInicial;
 
+@property (nonatomic, strong) Loja *loja;
+@property (nonatomic, strong) Categoria *categoria;
+@property (nonatomic, strong) Quadra *quadra;
+
 @end
 
 @implementation TelaInicialViewController
 @synthesize identificador;
+@synthesize loja;
+@synthesize categoria;
+@synthesize quadra;
+
 static NSString *const SegueTelaInicial = @"segueTelaInicial";
 
 - (void)viewDidLoad {
@@ -62,20 +72,78 @@ static NSString *const SegueTelaInicial = @"segueTelaInicial";
     [super viewDidAppear:animated];
 }
 
-#pragma mark - Ação botões iniciais
+#pragma iniciar
 - (IBAction)iniciar:(UIControl *)sender {
     switch (sender.tag) {
-        case 1:
+        case 1: {
             identificador = kIdentificadorAsaNorte;
+            [self carregarEntidadeLojaComId:identificador keyNSUserDefault:@"listaCarregadaAsaNorte"];
             break;
-        case 2:
+        }
+        case 2: {
             identificador = kIdentificadorAsaSul;
+            [self carregarEntidadeLojaComId:identificador keyNSUserDefault:@"listaCarregadaAsaSul"];
             break;
+        }
         default:
             break;
     }
 
     [self performSegueWithIdentifier:SegueTelaInicial sender:self];
+}
+
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *managedObjectContext = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        managedObjectContext = [delegate managedObjectContext];
+    }
+    return managedObjectContext;
+}
+
+- (void)criarEntidadesNo:(NSManagedObjectContext *)contexto {
+    loja = [NSEntityDescription insertNewObjectForEntityForName:@"Loja" inManagedObjectContext:contexto];
+    categoria = [NSEntityDescription insertNewObjectForEntityForName:@"Categoria" inManagedObjectContext:contexto];
+    quadra = [NSEntityDescription insertNewObjectForEntityForName:@"Quadra" inManagedObjectContext:contexto];
+}
+
+- (void)salvarNo:(NSManagedObjectContext *)contexto {
+    NSError *erro;
+    [contexto save:&erro];
+    if (!erro) {
+        NSLog(@"Dados persistidos no contexto: %@", contexto);
+    }else {
+        NSLog(@"Erro CoreData: %@", erro);
+    }
+}
+
+- (void)carregarEntidadeLojaComId:(NSString *)identificadorLoja keyNSUserDefault:(NSString *)key {
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:key]) {
+        NSManagedObjectContext *contexto = [self managedObjectContext];
+
+        //AsaNorte *asaNorte = [AsaNorte inserirObjetoNoContexto:contexto];
+
+        NSArray *arrayLojas = [Utils carregarArrayPlist:identificadorLoja];
+        NSArray *atributosComuns = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
+        for (NSDictionary *dicionario in arrayLojas) {
+            [self criarEntidadesNo:contexto];
+
+            //Loop para atributos comuns
+            for (NSString *atributo in atributosComuns) {
+                [loja setValue:[dicionario objectForKey:atributo] forKey:atributo];
+            }
+
+            [categoria setValue:[dicionario objectForKey:@"categoria"] forKey:@"nome"];
+            [loja setValue:categoria forKey:@"categoria"];
+
+            [quadra setValue:[dicionario objectForKey:@"quadra"] forKey:@"nome"];
+            [loja setValue:quadra forKey:@"quadra"];
+        }
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
+        [self salvarNo:contexto];
+    }
 }
 
 #pragma mark - Segue

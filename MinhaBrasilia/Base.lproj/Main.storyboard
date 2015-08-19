@@ -6,6 +6,63 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--ObrigatorioT2 View Controller-->
+        <scene sceneID="aEV-Ib-YQ5">
+            <objects>
+                <viewController id="A22-Xt-XEb" customClass="ObrigatorioT2ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gGY-r8-HJm"/>
+                        <viewControllerLayoutGuide type="bottom" id="XSL-4x-aoH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uZt-GH-iuS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4zs-jY-Ut0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jys-0z-mkB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2966" y="-1046"/>
+        </scene>
+        <!--ObrigatorioT1 View Controller-->
+        <scene sceneID="Fpt-QF-ug7">
+            <objects>
+                <viewController id="ixP-8l-qtI" customClass="ObrigatorioT1ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eya-Sm-Ng9"/>
+                        <viewControllerLayoutGuide type="bottom" id="6MK-9Y-A5y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="waZ-hv-9N1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TxY-dn-Y0K"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zOH-xQ-t6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2966" y="-1708"/>
+        </scene>
+        <!--Itens obrigatórios-->
+        <scene sceneID="ZsP-E6-VJx">
+            <objects>
+                <tabBarController title="Itens obrigatórios" id="AaI-M9-h2P" customClass="ObrigatorioTabBarViewController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="03U-zy-90n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="cKg-jx-7LT" kind="relationship" relationship="viewControllers" id="4jZ-Kj-RBa"/>
+                        <segue destination="8AG-n0-Fgx" kind="relationship" relationship="viewControllers" id="QyS-FP-QMs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPQ-ck-Fo3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1334" y="-1377"/>
+        </scene>
         <!--TelaInicialVC-->
         <scene sceneID="REx-Qk-mMf">
             <objects>
@@ -23,8 +80,8 @@
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icone_tela_inicial.png" translatesAutoresizingMaskIntoConstraints="NO" id="xGp-6U-eA3">
-                                <rect key="frame" x="172" y="72" width="256" height="256"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone_tela_inicial.png" translatesAutoresizingMaskIntoConstraints="NO" id="xGp-6U-eA3">
+                                <rect key="frame" x="181" y="72" width="238" height="238"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xGp-6U-eA3" secondAttribute="height" multiplier="1:1" id="NfM-fO-4Vc"/>
                                 </constraints>
@@ -94,6 +151,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Início" id="xGX-WL-TNq">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="O8N-xY-Big"/>
+                        <barButtonItem key="leftBarButtonItem" image="icone_tela_inicial_mais.png" id="pNa-dx-ZUv">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="AaI-M9-h2P" kind="show" identifier="segueObrigatorios" id="zwU-FF-VGJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="btnAsaNorte" destination="DHU-zb-uaU" id="MFW-Y0-78f"/>
@@ -361,8 +424,47 @@
             </objects>
             <point key="canvasLocation" x="-590" y="-96"/>
         </scene>
+        <!--Item 1-->
+        <scene sceneID="BTw-Lb-eBe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cKg-jx-7LT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="jgB-7a-SoT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GP2-mu-ZnX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ixP-8l-qtI" kind="relationship" relationship="rootViewController" id="7Xh-Nr-ITH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O1I-Jd-gEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2154" y="-1708"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="MLC-ju-Fe9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8AG-n0-Fgx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 2" id="NEZ-hY-who"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QZ0-wk-kCO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="A22-Xt-XEb" kind="relationship" relationship="rootViewController" id="DhI-WJ-8gG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EBq-mK-fNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2154" y="-1046"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icone_tela_inicial.png" width="256" height="256"/>
+        <image name="icone_tela_inicial_mais.png" width="32" height="32"/>
     </resources>
 </document>

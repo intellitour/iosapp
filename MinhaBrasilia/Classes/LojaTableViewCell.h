@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *vlQuadra;
 @property (weak, nonatomic) IBOutlet UILabel *vlTelefone;
 
-- (void) preencherCelulaComTitulo:(NSString *)vlTitulo comSubtitulo:(NSString*)vlSubtitulo comCategoria:(NSString*)vlCategoria comEndereco:(NSString*)vlEndereco comQuadra:(Quadra*)vlQuadra comTelefone:(NSString*)vlTelefone;
+- (void) preencherCelulaComTitulo:(NSString *)vlTitulo comSubtitulo:(NSString*)vlSubtitulo comCategoria:(NSString*)vlCategoria comEndereco:(NSString*)vlEndereco comQuadra:(NSString*)vlQuadra comTelefone:(NSString*)vlTelefone;
 
 
 @end

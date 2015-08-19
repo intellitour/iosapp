@@ -25,13 +25,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [GMSServices provideAPIKey:kApiKey];
 
-    //[self criarEntidadeLojaDoPlist:@"AsaNorte"];
-    //[self criarEntidadeLojaDoPlist:@"AsaSul"];
-    //[self criarEntidadeCategoriaDoPlist:@"CategoriaAsaNorte"];
-
-    [self carregarEntidadeDeLojasAsaNorte];
-    [self carregarEntidadeDeLojasAsaSul];
-
     return YES;
 }
 
@@ -136,115 +129,6 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
-    }
-}
-
-/**
- Método resposável por criar as entidades através do plist
- */
-//TODO: Alterar método para ser o mais genérico possível
-- (void)criarEntidadeLojaDoPlist:(NSString*)plist {
-    NSArray *arrayPlist = [Utils carregarArrayPlist:plist];
-
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
-    }
-
-    NSArray *atributos = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
-    for (NSDictionary *dicionario in arrayPlist) {
-
-        self.loja = [NSEntityDescription insertNewObjectForEntityForName:@"Loja"
-                                                  inManagedObjectContext:context];
-
-        self.categoria = [NSEntityDescription insertNewObjectForEntityForName:@"Categoria"
-                                                       inManagedObjectContext:context];
-
-        self.quadra = [NSEntityDescription insertNewObjectForEntityForName:@"Quadra"
-                                                    inManagedObjectContext:context];
-
-        for (NSString *atributo in atributos) {
-            [self.loja setValue:[dicionario objectForKey:atributo] forKey:atributo];
-        }
-
-        [self.loja setValue:self.categoria forKey:@"categoria"];
-        [self.loja setValue:self.quadra forKey:@"quadra"];
-
-    }
-}
-
-- (void)criarEntidades:(NSManagedObjectContext *)context {
-    self.loja = [NSEntityDescription insertNewObjectForEntityForName:@"Loja" inManagedObjectContext:context];
-    self.categoria = [NSEntityDescription insertNewObjectForEntityForName:@"Categoria" inManagedObjectContext:context];
-    self.quadra = [NSEntityDescription insertNewObjectForEntityForName:@"Quadra" inManagedObjectContext:context];
-}
-
-- (void)carregarEntidadeDeLojasAsaNorte {
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"listaCarregadaAsaNorte"] == nil) {
-        NSManagedObjectContext *context = [self managedObjectContext];
-
-        NSArray *arrayLojasAsaNorte = [Utils carregarArrayPlist:kIdentificadorAsaNorte];
-        NSArray *atributosComuns = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
-
-        for (NSDictionary *dicionario in arrayLojasAsaNorte) {
-
-            [self criarEntidades:context];
-
-            //Loop para atributos comuns
-            for (NSString *atributo in atributosComuns) {
-                [self.loja setValue:[dicionario objectForKey:atributo] forKey:atributo];
-            }
-
-            [self.categoria setValue:[dicionario objectForKey:@"categoria"] forKey:@"nome"];
-            [self.loja setValue:self.categoria forKey:@"categoria"];
-
-            [self.quadra setValue:[dicionario objectForKey:@"quadra"] forKey:@"nome"];
-            [self.loja setValue:self.quadra forKey:@"quadra"];
-        }
-
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"listaCarregadaAsaNorte"];
-    }
-}
-
-- (void)carregarEntidadeDeLojasAsaSul {
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"listaCarregadaAsaSul"] == nil) {
-        NSManagedObjectContext *context = [self managedObjectContext];
-
-        NSArray *arrayLojasAsaSul = [Utils carregarArrayPlist:kIdentificadorAsaSul];
-        NSArray *atributosComuns = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
-
-        for (NSDictionary *dicionario in arrayLojasAsaSul) {
-
-            [self criarEntidades:context];
-
-            //Loop para atributos comuns
-            for (NSString *atributo in atributosComuns) {
-                [self.loja setValue:[dicionario objectForKey:atributo] forKey:atributo];
-            }
-
-            [self.categoria setValue:[dicionario objectForKey:@"categoria"] forKey:@"nome"];
-            [self.loja setValue:self.categoria forKey:@"categoria"];
-
-            [self.quadra setValue:[dicionario objectForKey:@"quadra"] forKey:@"nome"];
-            [self.loja setValue:self.quadra forKey:@"quadra"];
-        }
-
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"listaCarregadaAsaSul"];
-    }
-}
-
-- (void)criarEntidadeCategoriaDoPlist:(NSString*)plist {
-    NSDictionary *dicionarioPlist = [Utils carregarDicionarioPlist:plist ComChave:@"categorias"];
-
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
-    }
-
-    for (NSString *atributo in dicionarioPlist) {
-        [self.categoria setValue:atributo forKey:@"nome"];
     }
 }
 

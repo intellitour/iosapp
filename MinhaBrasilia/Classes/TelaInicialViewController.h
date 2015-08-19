@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "Categoria.h"
+#import "Loja.h"
+#import "Quadra.h"
+#import "RefinarBuscaViewController.h"
+#import "Constantes.h"
+#import "DesignUtils.h"
+#import "Utils.h"
+#import "AsaNorte.h"
 
 @interface TelaInicialViewController : UIViewController
+
 
 @end

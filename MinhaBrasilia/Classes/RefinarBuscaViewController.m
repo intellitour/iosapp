@@ -10,19 +10,18 @@
 #import "CategoriaViewController.h"
 #import "Constantes.h"
 #import "DesignUtils.h"
+#import "Utils.h"
 
 @interface RefinarBuscaViewController ()
 
-@property (nonatomic, strong) NSMutableArray *listaArquivoPlist;
 @property (weak, nonatomic) IBOutlet UIButton *btnCategorias;
 @property (weak, nonatomic) IBOutlet UIButton *btnQuadras;
-
 @end
 
 @implementation RefinarBuscaViewController
 @synthesize identificadorBtn;
-@synthesize listaArquivoPlist;
 @synthesize listaDeCategorias;
+
 static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
 
 - (void)viewDidLoad {
@@ -56,26 +55,14 @@ static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
 #pragma mark - Carregar categorias
 - (IBAction)carregarCategorias:(id)sender {
     if ([identificadorBtn isEqualToString:kIdentificadorAsaNorte]) {
-        listaDeCategorias = [self carregarPlistDeCategoriasComId:identificadorBtn];
+        listaDeCategorias = [Utils carregarPlistDeCategoriasComId:identificadorBtn];
     } else if ([identificadorBtn isEqualToString:kIdentificadorAsaSul]) {
-        listaDeCategorias = [self carregarPlistDeCategoriasComId:identificadorBtn];
+        listaDeCategorias = [Utils carregarPlistDeCategoriasComId:identificadorBtn];
     }
 
     [self performSegueWithIdentifier:SegueRefinarBusca sender:self];
 }
 
-#pragma mark - Plist
-/**
- Método responsável por carregar o arquivo .plist de acordo com o identificador
- */
-- (NSMutableArray *)carregarPlistDeCategoriasComId:(NSString *)identificador {
-    listaArquivoPlist = [[NSMutableArray alloc] init];
-    NSString *caminho = [NSString stringWithFormat:@"Categoria%@", identificador];
-    NSString *arquivoPlist = [[NSBundle mainBundle] pathForResource:caminho ofType:@"plist"];
-    NSDictionary *dicionarioPlist = [NSDictionary dictionaryWithContentsOfFile:arquivoPlist];
-    listaArquivoPlist = [dicionarioPlist objectForKey:@"categorias"];
-    return listaArquivoPlist;
-}
 
 #pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

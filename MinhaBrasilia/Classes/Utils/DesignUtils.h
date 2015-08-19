@@ -11,7 +11,6 @@
 @interface DesignUtils : NSObject
 
 + (void)customizarBotao:(UIButton *)botao CorBg:(UIColor *)corBtn CorTitulo:(UIColor *)corTitulo Round:(double)arredondamento;
-
 + (void)customizarNavBar:(UINavigationController *)navController
            CorBtnVoltar:(UIColor *)corBtnVoltar
               CorNavBar:(UIColor *)corNavBar

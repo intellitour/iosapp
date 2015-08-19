@@ -75,29 +75,17 @@ static NSString *const SegueCategorias = @"segueCategorias";
                                         reuseIdentifier:IdentificadorCelula];
     }
 
-    //Criando para cada categoria uma entidade categoria
-    self.categoria = [NSEntityDescription insertNewObjectForEntityForName:@"Categoria" inManagedObjectContext:self.managedObjectContext];
+    [celula setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 
-    //TODO: Criar método para persistir separadamente
-    [self.categoria setValue:[self.itensDaTabela objectAtIndex:indexPath.row] forKey:@"nome"];
-
-    NSError *error = nil;
-    if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Não foi possível salvar. Erro: %@", error);
-        NSLog(@"Erro: %@", [error localizedDescription]);
-    } else {
-        [celula.textLabel setText:self.categoria.nome];
-        [celula setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    }
+    [celula.textLabel setText:[self.itensDaTabela objectAtIndex:indexPath.row]];
 
     return celula;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    self.categoria.nome = [self.itensDaTabela objectAtIndex:indexPath.row];
     //Passando a categoria clicada para o sender
-    [self performSegueWithIdentifier:SegueCategorias sender:self.categoria.nome];
+    [self performSegueWithIdentifier:SegueCategorias sender:[self.itensDaTabela objectAtIndex:indexPath.row]];
 }
 
 
