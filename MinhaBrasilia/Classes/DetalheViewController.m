@@ -21,6 +21,7 @@
 @end
 
 @implementation DetalheViewController
+@synthesize vlTitulo;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

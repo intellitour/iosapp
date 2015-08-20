@@ -135,7 +135,6 @@ static NSString *const SegueLoja = @"segueLoja";
         asaSul = [self.listaFiltrada2 objectAtIndex:indexPath.row];
         sender = asaSul;
     }
-    //loja = [self.listaFiltrada2 objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:SegueLoja sender:sender];
 }
 
@@ -143,7 +142,8 @@ static NSString *const SegueLoja = @"segueLoja";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:SegueLoja]) {
         DetalheViewController *detalheVC = [segue destinationViewController];
-        //[detalheVC setLoja:sender];
+        [detalheVC setEntidade:sender];
+        [detalheVC setIdentificadorBtn:identificadorBtn];
     }
 }
 

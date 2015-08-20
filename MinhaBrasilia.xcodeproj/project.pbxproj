@@ -33,6 +33,7 @@
 		A3E444791B854D990087F5C9 /* Quadra.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E444781B854D990087F5C9 /* Quadra.m */; };
 		A3E4447C1B8573AC0087F5C9 /* icone_obrigatorio_dois.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E4447A1B8573AC0087F5C9 /* icone_obrigatorio_dois.png */; };
 		A3E4447D1B8573AC0087F5C9 /* icone_obrigatorio_um.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E4447B1B8573AC0087F5C9 /* icone_obrigatorio_um.png */; };
+		A3E444801B857A280087F5C9 /* SobreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E4447F1B857A280087F5C9 /* SobreViewController.m */; };
 		A3EB04621B68396200DE7900 /* LojaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3EB04611B68396200DE7900 /* LojaViewController.m */; };
 		A3F9C8591B5DA8F8001ADC7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F9C8581B5DA8F8001ADC7A /* main.m */; };
 		A3F9C85C1B5DA8F8001ADC7A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F9C85B1B5DA8F8001ADC7A /* AppDelegate.m */; };
@@ -100,6 +101,8 @@
 		A3E444781B854D990087F5C9 /* Quadra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Quadra.m; path = MinhaBrasilia/Classes/Quadra.m; sourceTree = SOURCE_ROOT; };
 		A3E4447A1B8573AC0087F5C9 /* icone_obrigatorio_dois.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_obrigatorio_dois.png; sourceTree = "<group>"; };
 		A3E4447B1B8573AC0087F5C9 /* icone_obrigatorio_um.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_obrigatorio_um.png; sourceTree = "<group>"; };
+		A3E4447E1B857A280087F5C9 /* SobreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SobreViewController.h; sourceTree = "<group>"; };
+		A3E4447F1B857A280087F5C9 /* SobreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SobreViewController.m; sourceTree = "<group>"; };
 		A3EB04601B68396200DE7900 /* LojaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LojaViewController.h; sourceTree = "<group>"; };
 		A3EB04611B68396200DE7900 /* LojaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LojaViewController.m; sourceTree = "<group>"; };
 		A3F9C8531B5DA8F8001ADC7A /* MinhaBrasilia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinhaBrasilia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +225,8 @@
 			children = (
 				A3B438DE1B7BF98C0006E19D /* Utils */,
 				A3B438DA1B7BF9800006E19D /* Constantes */,
+				A3E4447E1B857A280087F5C9 /* SobreViewController.h */,
+				A3E4447F1B857A280087F5C9 /* SobreViewController.m */,
 				A3C8E4C31B5DE00C001B547E /* TelaInicialViewController.h */,
 				A3C8E4C41B5DE00C001B547E /* TelaInicialViewController.m */,
 				A3B7C2E71B66D801002C6F4B /* RefinarBuscaViewController.h */,
@@ -456,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3E444801B857A280087F5C9 /* SobreViewController.m in Sources */,
 				A3694F0F1B841D030063E068 /* ObrigatorioT2ViewController.m in Sources */,
 				A3F9C85C1B5DA8F8001ADC7A /* AppDelegate.m in Sources */,
 				A3E4446D1B854D990087F5C9 /* AsaNorte.m in Sources */,
