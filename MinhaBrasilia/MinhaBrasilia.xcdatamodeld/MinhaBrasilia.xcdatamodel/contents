@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AsaNorte" representedClassName="AsaNorte" syncable="YES">
+        <relationship name="loja" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Loja" syncable="YES"/>
+    </entity>
+    <entity name="AsaSul" representedClassName="AsaSul" syncable="YES">
+        <relationship name="loja" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Loja" syncable="YES"/>
+    </entity>
     <entity name="Categoria" representedClassName="Categoria" syncable="YES">
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -15,8 +21,10 @@
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Categoria" positionX="-54" positionY="-9" width="128" height="58"/>
-        <element name="Loja" positionX="88" positionY="-171" width="128" height="133"/>
-        <element name="Quadra" positionX="313" positionY="-18" width="128" height="60"/>
+        <element name="Categoria" positionX="-3402" positionY="-882" width="128" height="58"/>
+        <element name="Loja" positionX="-3260" positionY="-1044" width="128" height="133"/>
+        <element name="Quadra" positionX="-3035" positionY="-891" width="128" height="60"/>
+        <element name="AsaNorte" positionX="-3161" positionY="-1278" width="128" height="58"/>
+        <element name="AsaSul" positionX="-3393" positionY="-1278" width="128" height="58"/>
     </elements>
 </model>

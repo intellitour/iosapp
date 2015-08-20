@@ -13,6 +13,10 @@
 #import "Categoria.h"
 #import "Loja.h"
 #import "DesignUtils.h"
+#import "Constantes.h"
+#import "AsaNorte.h"
+#import "AsaSul.h"
+#import "Utils.h"
 
 @interface LojaViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableViewLojas;
@@ -20,11 +24,15 @@
 @property (weak, nonatomic) IBOutlet UITableView *buscaLojas;
 @property (nonatomic, strong) Loja *loja;
 @property (nonatomic, strong) Categoria *categoria;
+@property (nonatomic, strong) AsaNorte *asaNorte;
+@property (nonatomic, strong) AsaSul *asaSul;
 @end
 
 @implementation LojaViewController
 @synthesize identificadorBtn;
 @synthesize loja;
+@synthesize asaNorte;
+@synthesize asaSul;
 static NSString *const IdentificadorCelula = @"idCelulaLoja";
 static NSString *const SegueLoja = @"segueLoja";
 
@@ -60,14 +68,24 @@ static NSString *const SegueLoja = @"segueLoja";
                       FonteTitulo:@"HelveticaNeue-CondensedBlack"];
 }
 
-#pragma mark -  lojasFiltradasPor:filtro
+#pragma lojasFiltradasPor:filtro
 -(NSArray *)lojasFiltradasPor:(NSString *)filtro {
     NSArray *fetchedObjects;
+    NSEntityDescription *entityDescription;
     NSManagedObjectContext *context = [self managedObjectContext];
     NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Loja" inManagedObjectContext:context];
+
+    if ([Utils isEntidadeAsaNorte:identificadorBtn]) {
+        entityDescription = [NSEntityDescription entityForName:kIdentificadorAsaNorte
+                                        inManagedObjectContext:context];
+    } else if ([Utils isEntidadeAsaSul:identificadorBtn]) {
+        entityDescription = [NSEntityDescription entityForName:kIdentificadorAsaSul
+                                        inManagedObjectContext:context];
+    }
+
+
     [fetch setEntity:entityDescription];
-    [fetch setPredicate:[NSPredicate predicateWithFormat:@"categoria.nome = %@", filtro]];
+    [fetch setPredicate:[NSPredicate predicateWithFormat:@"loja.categoria.nome = %@", filtro]];
     NSError * error = nil;
     fetchedObjects = [context executeFetchRequest:fetch error:&error];
 
@@ -83,14 +101,24 @@ static NSString *const SegueLoja = @"segueLoja";
      LojaTableViewCell *celula = [tableView dequeueReusableCellWithIdentifier:IdentificadorCelula
                                                                 forIndexPath:indexPath];
 
-     loja = [self.listaFiltrada2 objectAtIndex:indexPath.row];
-
-     [celula preencherCelulaComTitulo:loja.titulo
-                         comSubtitulo:loja.subtitulo
-                         comCategoria:loja.categoria.nome
-                          comEndereco:loja.endereco
-                            comQuadra:loja.quadra.nome
-                          comTelefone:loja.telefone];
+     //TODO: Refazer quando tiver mais tempo
+     if ([Utils isEntidadeAsaNorte:identificadorBtn]) {
+         asaNorte = [self.listaFiltrada2 objectAtIndex:indexPath.row];
+         [celula preencherCelulaComTitulo:asaNorte.loja.titulo
+                             comSubtitulo:asaNorte.loja.subtitulo
+                             comCategoria:asaNorte.loja.categoria.nome
+                              comEndereco:asaNorte.loja.endereco
+                                comQuadra:asaNorte.loja.quadra.nome
+                              comTelefone:asaNorte.loja.telefone];
+     } else if ([Utils isEntidadeAsaSul:identificadorBtn]) {
+         asaSul = [self.listaFiltrada2 objectAtIndex:indexPath.row];
+         [celula preencherCelulaComTitulo:asaSul.loja.titulo
+                             comSubtitulo:asaSul.loja.subtitulo
+                             comCategoria:asaSul.loja.categoria.nome
+                              comEndereco:asaSul.loja.endereco
+                                comQuadra:asaSul.loja.quadra.nome
+                              comTelefone:asaSul.loja.telefone];
+     }
 
     [celula setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
      return celula;
@@ -99,15 +127,23 @@ static NSString *const SegueLoja = @"segueLoja";
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    loja = [self.listaFiltrada2 objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:SegueLoja sender:loja];
+    id sender;
+    if ([Utils isEntidadeAsaNorte:identificadorBtn]) {
+        asaNorte = [self.listaFiltrada2 objectAtIndex:indexPath.row];
+        sender = asaNorte;
+    } else if ([Utils isEntidadeAsaSul:identificadorBtn]) {
+        asaSul = [self.listaFiltrada2 objectAtIndex:indexPath.row];
+        sender = asaSul;
+    }
+    //loja = [self.listaFiltrada2 objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:SegueLoja sender:sender];
 }
 
 #pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:SegueLoja]) {
         DetalheViewController *detalheVC = [segue destinationViewController];
-        [detalheVC setLoja:sender];
+        //[detalheVC setLoja:sender];
     }
 }
 

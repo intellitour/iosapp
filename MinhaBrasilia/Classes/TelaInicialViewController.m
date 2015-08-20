@@ -11,6 +11,8 @@
 #import "Constantes.h"
 #import "DesignUtils.h"
 #import "Utils.h"
+#import "Loja.h"
+#import "AsaSul.h"
 #import "AsaNorte.h"
 
 @interface TelaInicialViewController ()
@@ -22,6 +24,9 @@
 @property (nonatomic, strong) Loja *loja;
 @property (nonatomic, strong) Categoria *categoria;
 @property (nonatomic, strong) Quadra *quadra;
+@property (nonatomic, strong) AsaSul *asaSul;
+@property (nonatomic, strong) AsaNorte *asaNorte;
+
 
 @end
 
@@ -30,6 +35,8 @@
 @synthesize loja;
 @synthesize categoria;
 @synthesize quadra;
+@synthesize asaSul;
+@synthesize asaNorte;
 
 static NSString *const SegueTelaInicial = @"segueTelaInicial";
 
@@ -77,12 +84,14 @@ static NSString *const SegueTelaInicial = @"segueTelaInicial";
     switch (sender.tag) {
         case 1: {
             identificador = kIdentificadorAsaNorte;
-            [self carregarEntidadeLojaComId:identificador keyNSUserDefault:@"listaCarregadaAsaNorte"];
+            [self carregarEntidadeAsaNorteComId];
+            //[self carregarEntidadeLojaComId:identificador keyNSUserDefault:@"listaCarregadaAsaNorte"];
             break;
         }
         case 2: {
             identificador = kIdentificadorAsaSul;
-            [self carregarEntidadeLojaComId:identificador keyNSUserDefault:@"listaCarregadaAsaSul"];
+            [self carregarEntidadeAsaSulComId];
+            //[self carregarEntidadeLojaComId:identificador keyNSUserDefault:@"listaCarregadaAsaSul"];
             break;
         }
         default:
@@ -102,27 +111,94 @@ static NSString *const SegueTelaInicial = @"segueTelaInicial";
 }
 
 - (void)criarEntidadesNo:(NSManagedObjectContext *)contexto {
-    loja = [NSEntityDescription insertNewObjectForEntityForName:@"Loja" inManagedObjectContext:contexto];
-    categoria = [NSEntityDescription insertNewObjectForEntityForName:@"Categoria" inManagedObjectContext:contexto];
-    quadra = [NSEntityDescription insertNewObjectForEntityForName:@"Quadra" inManagedObjectContext:contexto];
+    loja = [Loja inserirNovoObjetoNoContexto:contexto];
+    categoria = [Categoria inserirNovoObjetoNoContexto:contexto];
+    quadra = [Quadra inserirNovoObjetoNoContexto:contexto];
+    if ([identificador isEqualToString:kIdentificadorAsaNorte]) {
+        asaNorte = [AsaNorte inserirNovoObjetoNoContexto:contexto];
+    } else if ([identificador isEqualToString:kIdentificadorAsaSul]) {
+        asaSul = [AsaSul inserirNovoObjetoNoContexto:contexto];
+    }
 }
 
 - (void)salvarNo:(NSManagedObjectContext *)contexto {
     NSError *erro;
     [contexto save:&erro];
     if (!erro) {
-        NSLog(@"Dados persistidos no contexto: %@", contexto);
+        NSLog(@"Dados da entidade %@ persistidos no contexto: %@", identificador, contexto);
     }else {
         NSLog(@"Erro CoreData: %@", erro);
+    }
+}
+
+- (void)carregarEntidadeAsaSulComId {
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"listaAS"]) {
+        NSManagedObjectContext *contexto = [self managedObjectContext];
+
+        NSArray *arrayLojas = [Utils carregarArrayPlist:kIdentificadorAsaSul];
+        NSArray *atributosComuns = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
+
+        for (NSDictionary *dicionario in arrayLojas) {
+            asaSul = [AsaSul inserirNovoObjetoNoContexto:contexto];
+            loja = [Loja inserirNovoObjetoNoContexto:contexto];
+            categoria = [Categoria inserirNovoObjetoNoContexto:contexto];
+            quadra = [Quadra inserirNovoObjetoNoContexto:contexto];
+
+            for (NSString *atributo in atributosComuns) {
+                [loja setValue:[dicionario objectForKey:atributo] forKey:atributo];
+            }
+
+            [categoria setValue:[dicionario objectForKey:@"categoria"] forKey:@"nome"];
+            [loja setValue:categoria forKey:@"categoria"];
+
+            [quadra setValue:[dicionario objectForKey:@"quadra"] forKey:@"nome"];
+            [loja setValue:quadra forKey:@"quadra"];
+
+            [asaSul setLoja:loja];
+        }
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"listaAS"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [self salvarNo:contexto];
+    }
+}
+
+- (void)carregarEntidadeAsaNorteComId {
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"listaAN"]) {
+        NSManagedObjectContext *contexto = [self managedObjectContext];
+
+        NSArray *arrayLojas = [Utils carregarArrayPlist:kIdentificadorAsaNorte];
+        NSArray *atributosComuns = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
+
+        for (NSDictionary *dicionario in arrayLojas) {
+            asaNorte = [AsaNorte inserirNovoObjetoNoContexto:contexto];
+            loja = [Loja inserirNovoObjetoNoContexto:contexto];
+            categoria = [Categoria inserirNovoObjetoNoContexto:contexto];
+            quadra = [Quadra inserirNovoObjetoNoContexto:contexto];
+
+            for (NSString *atributo in atributosComuns) {
+                [loja setValue:[dicionario objectForKey:atributo] forKey:atributo];
+            }
+
+            [categoria setValue:[dicionario objectForKey:@"categoria"] forKey:@"nome"];
+            [loja setValue:categoria forKey:@"categoria"];
+
+            [quadra setValue:[dicionario objectForKey:@"quadra"] forKey:@"nome"];
+            [loja setValue:quadra forKey:@"quadra"];
+
+            [asaNorte setLoja:loja];
+        }
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"listaAN"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
+        [self salvarNo:contexto];
     }
 }
 
 - (void)carregarEntidadeLojaComId:(NSString *)identificadorLoja keyNSUserDefault:(NSString *)key {
     if (![[NSUserDefaults standardUserDefaults] objectForKey:key]) {
         NSManagedObjectContext *contexto = [self managedObjectContext];
-
-        //AsaNorte *asaNorte = [AsaNorte inserirObjetoNoContexto:contexto];
-
+        
         NSArray *arrayLojas = [Utils carregarArrayPlist:identificadorLoja];
         NSArray *atributosComuns = @[@"titulo", @"subtitulo", @"telefone", @"endereco"];
         for (NSDictionary *dicionario in arrayLojas) {
@@ -145,6 +221,8 @@ static NSString *const SegueTelaInicial = @"segueTelaInicial";
         [self salvarNo:contexto];
     }
 }
+
+
 
 #pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

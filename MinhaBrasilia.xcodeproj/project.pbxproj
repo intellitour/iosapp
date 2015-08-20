@@ -14,9 +14,6 @@
 		A30026441B5DE1D3001FDAD2 /* CategoriaAsaSul.plist in Resources */ = {isa = PBXBuildFile; fileRef = A30026351B5DE1D3001FDAD2 /* CategoriaAsaSul.plist */; };
 		A300264A1B5DE1D3001FDAD2 /* splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A30026401B5DE1D3001FDAD2 /* splashscreen.png */; };
 		A3528A7F1B6AFCD200DA4F43 /* DetalheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3528A7E1B6AFCD200DA4F43 /* DetalheViewController.m */; };
-		A35E801C1B72CB04006A98C5 /* Quadra.m in Sources */ = {isa = PBXBuildFile; fileRef = A35E801B1B72CB04006A98C5 /* Quadra.m */; };
-		A35E801F1B72CB04006A98C5 /* Categoria.m in Sources */ = {isa = PBXBuildFile; fileRef = A35E801E1B72CB04006A98C5 /* Categoria.m */; };
-		A35E80221B72CB04006A98C5 /* Loja.m in Sources */ = {isa = PBXBuildFile; fileRef = A35E80211B72CB04006A98C5 /* Loja.m */; };
 		A3694F091B841BDF0063E068 /* icone_tela_inicial_mais.png in Resources */ = {isa = PBXBuildFile; fileRef = A3694F081B841BDF0063E068 /* icone_tela_inicial_mais.png */; };
 		A3694F0C1B841CEF0063E068 /* ObrigatorioT1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3694F0B1B841CEF0063E068 /* ObrigatorioT1ViewController.m */; };
 		A3694F0F1B841D030063E068 /* ObrigatorioT2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3694F0E1B841D030063E068 /* ObrigatorioT2ViewController.m */; };
@@ -29,8 +26,13 @@
 		A3B9AE5E1B797208005A02F4 /* icone_tela_inicial.png in Resources */ = {isa = PBXBuildFile; fileRef = A3B9AE5D1B797208005A02F4 /* icone_tela_inicial.png */; };
 		A3C8E4C81B5DE00C001B547E /* TelaInicialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8E4C41B5DE00C001B547E /* TelaInicialViewController.m */; };
 		A3DC58D31B6995B400E4D460 /* LojaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3DC58D21B6995B400E4D460 /* LojaTableViewCell.m */; };
-		A3E444671B8533350087F5C9 /* AsaNorte.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E444661B8533350087F5C9 /* AsaNorte.m */; };
-		A3E4446A1B8535580087F5C9 /* AsaSul.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E444691B8535580087F5C9 /* AsaSul.m */; };
+		A3E4446D1B854D990087F5C9 /* AsaNorte.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E4446C1B854D990087F5C9 /* AsaNorte.m */; };
+		A3E444701B854D990087F5C9 /* AsaSul.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E4446F1B854D990087F5C9 /* AsaSul.m */; };
+		A3E444731B854D990087F5C9 /* Categoria.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E444721B854D990087F5C9 /* Categoria.m */; };
+		A3E444761B854D990087F5C9 /* Loja.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E444751B854D990087F5C9 /* Loja.m */; };
+		A3E444791B854D990087F5C9 /* Quadra.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E444781B854D990087F5C9 /* Quadra.m */; };
+		A3E4447C1B8573AC0087F5C9 /* icone_obrigatorio_dois.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E4447A1B8573AC0087F5C9 /* icone_obrigatorio_dois.png */; };
+		A3E4447D1B8573AC0087F5C9 /* icone_obrigatorio_um.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E4447B1B8573AC0087F5C9 /* icone_obrigatorio_um.png */; };
 		A3EB04621B68396200DE7900 /* LojaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3EB04611B68396200DE7900 /* LojaViewController.m */; };
 		A3F9C8591B5DA8F8001ADC7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F9C8581B5DA8F8001ADC7A /* main.m */; };
 		A3F9C85C1B5DA8F8001ADC7A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F9C85B1B5DA8F8001ADC7A /* AppDelegate.m */; };
@@ -64,12 +66,6 @@
 		A3528A7E1B6AFCD200DA4F43 /* DetalheViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalheViewController.m; sourceTree = "<group>"; };
 		A3528A801B6B1AC300DA4F43 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A3528A821B6B1ACB00DA4F43 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		A35E801A1B72CB04006A98C5 /* Quadra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quadra.h; path = MinhaBrasilia/Quadra.h; sourceTree = SOURCE_ROOT; };
-		A35E801B1B72CB04006A98C5 /* Quadra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Quadra.m; path = MinhaBrasilia/Quadra.m; sourceTree = SOURCE_ROOT; };
-		A35E801D1B72CB04006A98C5 /* Categoria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Categoria.h; path = MinhaBrasilia/Categoria.h; sourceTree = SOURCE_ROOT; };
-		A35E801E1B72CB04006A98C5 /* Categoria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Categoria.m; path = MinhaBrasilia/Categoria.m; sourceTree = SOURCE_ROOT; };
-		A35E80201B72CB04006A98C5 /* Loja.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Loja.h; path = MinhaBrasilia/Loja.h; sourceTree = SOURCE_ROOT; };
-		A35E80211B72CB04006A98C5 /* Loja.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Loja.m; path = MinhaBrasilia/Loja.m; sourceTree = SOURCE_ROOT; };
 		A3694F081B841BDF0063E068 /* icone_tela_inicial_mais.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_tela_inicial_mais.png; sourceTree = "<group>"; };
 		A3694F0A1B841CEF0063E068 /* ObrigatorioT1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObrigatorioT1ViewController.h; sourceTree = "<group>"; };
 		A3694F0B1B841CEF0063E068 /* ObrigatorioT1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObrigatorioT1ViewController.m; sourceTree = "<group>"; };
@@ -92,10 +88,18 @@
 		A3C8E4C41B5DE00C001B547E /* TelaInicialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelaInicialViewController.m; sourceTree = "<group>"; };
 		A3DC58D11B6995B400E4D460 /* LojaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LojaTableViewCell.h; sourceTree = "<group>"; };
 		A3DC58D21B6995B400E4D460 /* LojaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LojaTableViewCell.m; sourceTree = "<group>"; };
-		A3E444651B8533350087F5C9 /* AsaNorte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsaNorte.h; path = MinhaBrasilia/AsaNorte.h; sourceTree = SOURCE_ROOT; };
-		A3E444661B8533350087F5C9 /* AsaNorte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsaNorte.m; path = MinhaBrasilia/AsaNorte.m; sourceTree = SOURCE_ROOT; };
-		A3E444681B8535580087F5C9 /* AsaSul.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsaSul.h; path = MinhaBrasilia/AsaSul.h; sourceTree = SOURCE_ROOT; };
-		A3E444691B8535580087F5C9 /* AsaSul.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsaSul.m; path = MinhaBrasilia/AsaSul.m; sourceTree = SOURCE_ROOT; };
+		A3E4446B1B854D990087F5C9 /* AsaNorte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsaNorte.h; path = MinhaBrasilia/Classes/AsaNorte.h; sourceTree = SOURCE_ROOT; };
+		A3E4446C1B854D990087F5C9 /* AsaNorte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsaNorte.m; path = MinhaBrasilia/Classes/AsaNorte.m; sourceTree = SOURCE_ROOT; };
+		A3E4446E1B854D990087F5C9 /* AsaSul.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsaSul.h; path = MinhaBrasilia/Classes/AsaSul.h; sourceTree = SOURCE_ROOT; };
+		A3E4446F1B854D990087F5C9 /* AsaSul.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsaSul.m; path = MinhaBrasilia/Classes/AsaSul.m; sourceTree = SOURCE_ROOT; };
+		A3E444711B854D990087F5C9 /* Categoria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Categoria.h; path = MinhaBrasilia/Classes/Categoria.h; sourceTree = SOURCE_ROOT; };
+		A3E444721B854D990087F5C9 /* Categoria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Categoria.m; path = MinhaBrasilia/Classes/Categoria.m; sourceTree = SOURCE_ROOT; };
+		A3E444741B854D990087F5C9 /* Loja.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Loja.h; path = MinhaBrasilia/Classes/Loja.h; sourceTree = SOURCE_ROOT; };
+		A3E444751B854D990087F5C9 /* Loja.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Loja.m; path = MinhaBrasilia/Classes/Loja.m; sourceTree = SOURCE_ROOT; };
+		A3E444771B854D990087F5C9 /* Quadra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quadra.h; path = MinhaBrasilia/Classes/Quadra.h; sourceTree = SOURCE_ROOT; };
+		A3E444781B854D990087F5C9 /* Quadra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Quadra.m; path = MinhaBrasilia/Classes/Quadra.m; sourceTree = SOURCE_ROOT; };
+		A3E4447A1B8573AC0087F5C9 /* icone_obrigatorio_dois.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_obrigatorio_dois.png; sourceTree = "<group>"; };
+		A3E4447B1B8573AC0087F5C9 /* icone_obrigatorio_um.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_obrigatorio_um.png; sourceTree = "<group>"; };
 		A3EB04601B68396200DE7900 /* LojaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LojaViewController.h; sourceTree = "<group>"; };
 		A3EB04611B68396200DE7900 /* LojaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LojaViewController.m; sourceTree = "<group>"; };
 		A3F9C8531B5DA8F8001ADC7A /* MinhaBrasilia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinhaBrasilia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,16 +171,16 @@
 		A30026361B5DE1D3001FDAD2 /* Modelos */ = {
 			isa = PBXGroup;
 			children = (
-				A35E80201B72CB04006A98C5 /* Loja.h */,
-				A35E80211B72CB04006A98C5 /* Loja.m */,
-				A35E801D1B72CB04006A98C5 /* Categoria.h */,
-				A35E801E1B72CB04006A98C5 /* Categoria.m */,
-				A35E801A1B72CB04006A98C5 /* Quadra.h */,
-				A35E801B1B72CB04006A98C5 /* Quadra.m */,
-				A3E444651B8533350087F5C9 /* AsaNorte.h */,
-				A3E444661B8533350087F5C9 /* AsaNorte.m */,
-				A3E444681B8535580087F5C9 /* AsaSul.h */,
-				A3E444691B8535580087F5C9 /* AsaSul.m */,
+				A3E444771B854D990087F5C9 /* Quadra.h */,
+				A3E444781B854D990087F5C9 /* Quadra.m */,
+				A3E444741B854D990087F5C9 /* Loja.h */,
+				A3E444751B854D990087F5C9 /* Loja.m */,
+				A3E444711B854D990087F5C9 /* Categoria.h */,
+				A3E444721B854D990087F5C9 /* Categoria.m */,
+				A3E4446E1B854D990087F5C9 /* AsaSul.h */,
+				A3E4446F1B854D990087F5C9 /* AsaSul.m */,
+				A3E4446B1B854D990087F5C9 /* AsaNorte.h */,
+				A3E4446C1B854D990087F5C9 /* AsaNorte.m */,
 			);
 			path = Modelos;
 			sourceTree = "<group>";
@@ -184,6 +188,8 @@
 		A300263D1B5DE1D3001FDAD2 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				A3E4447A1B8573AC0087F5C9 /* icone_obrigatorio_dois.png */,
+				A3E4447B1B8573AC0087F5C9 /* icone_obrigatorio_um.png */,
 				A3694F081B841BDF0063E068 /* icone_tela_inicial_mais.png */,
 				A3B9AE5D1B797208005A02F4 /* icone_tela_inicial.png */,
 				A30026401B5DE1D3001FDAD2 /* splashscreen.png */,
@@ -388,11 +394,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3E4447C1B8573AC0087F5C9 /* icone_obrigatorio_dois.png in Resources */,
 				A3F9C8A51B5DAD09001ADC7A /* Main.storyboard in Resources */,
 				A3B9AE5E1B797208005A02F4 /* icone_tela_inicial.png in Resources */,
 				A30026411B5DE1D3001FDAD2 /* AsaNorte.plist in Resources */,
 				A30026441B5DE1D3001FDAD2 /* CategoriaAsaSul.plist in Resources */,
 				A3F9C86A1B5DA8F8001ADC7A /* LaunchScreen.xib in Resources */,
+				A3E4447D1B8573AC0087F5C9 /* icone_obrigatorio_um.png in Resources */,
 				A300264A1B5DE1D3001FDAD2 /* splashscreen.png in Resources */,
 				A30026421B5DE1D3001FDAD2 /* AsaSul.plist in Resources */,
 				A3F9C8671B5DA8F8001ADC7A /* Images.xcassets in Resources */,
@@ -450,22 +458,22 @@
 			files = (
 				A3694F0F1B841D030063E068 /* ObrigatorioT2ViewController.m in Sources */,
 				A3F9C85C1B5DA8F8001ADC7A /* AppDelegate.m in Sources */,
-				A35E80221B72CB04006A98C5 /* Loja.m in Sources */,
-				A35E801C1B72CB04006A98C5 /* Quadra.m in Sources */,
+				A3E4446D1B854D990087F5C9 /* AsaNorte.m in Sources */,
+				A3E444731B854D990087F5C9 /* Categoria.m in Sources */,
 				A3B438E41B7BF9BD0006E19D /* DesignUtils.m in Sources */,
 				A3694F0C1B841CEF0063E068 /* ObrigatorioT1ViewController.m in Sources */,
 				A3F9C85F1B5DA8F8001ADC7A /* MinhaBrasilia.xcdatamodeld in Sources */,
-				A35E801F1B72CB04006A98C5 /* Categoria.m in Sources */,
 				A3C8E4C81B5DE00C001B547E /* TelaInicialViewController.m in Sources */,
 				A3B7C2E91B66D801002C6F4B /* RefinarBuscaViewController.m in Sources */,
 				A3F9C8621B5DA8F8001ADC7A /* ViewController.m in Sources */,
 				A3DC58D31B6995B400E4D460 /* LojaTableViewCell.m in Sources */,
 				A3B438DD1B7BF9800006E19D /* Constantes.m in Sources */,
 				A3694F121B841D710063E068 /* ObrigatorioTabBarViewController.m in Sources */,
-				A3E4446A1B8535580087F5C9 /* AsaSul.m in Sources */,
-				A3E444671B8533350087F5C9 /* AsaNorte.m in Sources */,
+				A3E444791B854D990087F5C9 /* Quadra.m in Sources */,
 				A3B7C2E61B66D605002C6F4B /* CategoriaViewController.m in Sources */,
 				A3528A7F1B6AFCD200DA4F43 /* DetalheViewController.m in Sources */,
+				A3E444761B854D990087F5C9 /* Loja.m in Sources */,
+				A3E444701B854D990087F5C9 /* AsaSul.m in Sources */,
 				A3EB04621B68396200DE7900 /* LojaViewController.m in Sources */,
 				A3F9C8591B5DA8F8001ADC7A /* main.m in Sources */,
 				A3B438E11B7BF98C0006E19D /* Utils.m in Sources */,

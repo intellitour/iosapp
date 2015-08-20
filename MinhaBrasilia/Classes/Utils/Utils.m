@@ -7,6 +7,7 @@
 //
 
 #import "Utils.h"
+#import "Constantes.h"
 
 @implementation Utils
 
@@ -36,10 +37,26 @@
 }
 
 #pragma isStringVazia
-+ (BOOL) isStringVazia : (NSString *)string {
++ (BOOL) isStringVazia:(NSString *)string {
     if([string length] == 0 || [string isKindOfClass:[NSNull class]] ||
        [string isEqualToString:@""] || [string  isEqualToString:NULL]  ||
        string == nil) {
+        return YES;
+    }
+    return NO;
+}
+
+#pragma isEntidadeAsaNorte
++ (BOOL) isEntidadeAsaNorte:(NSString *)identificador {
+    if ([identificador isEqualToString:kIdentificadorAsaNorte]) {
+        return YES;
+    }
+    return NO;
+}
+
+#pragma isEntidadeAsaSul
++ (BOOL) isEntidadeAsaSul:(NSString *)identificador {
+    if ([identificador isEqualToString:kIdentificadorAsaSul]) {
         return YES;
     }
     return NO;

@@ -428,7 +428,7 @@
         <scene sceneID="BTw-Lb-eBe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cKg-jx-7LT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="jgB-7a-SoT"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" image="icone_obrigatorio_um.png" id="jgB-7a-SoT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GP2-mu-ZnX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -447,7 +447,7 @@
         <scene sceneID="MLC-ju-Fe9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8AG-n0-Fgx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="NEZ-hY-who"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" image="icone_obrigatorio_dois.png" id="NEZ-hY-who"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QZ0-wk-kCO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -464,6 +464,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icone_obrigatorio_dois.png" width="32" height="32"/>
+        <image name="icone_obrigatorio_um.png" width="32" height="32"/>
         <image name="icone_tela_inicial.png" width="256" height="256"/>
         <image name="icone_tela_inicial_mais.png" width="32" height="32"/>
     </resources>

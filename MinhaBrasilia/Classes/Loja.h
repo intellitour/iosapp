@@ -2,7 +2,7 @@
 //  Loja.h
 //  MinhaBrasilia
 //
-//  Created by Filipe Manuel on 8/5/15.
+//  Created by Filipe Manuel on 8/19/15.
 //  Copyright (c) 2015 Filipe Manuel. All rights reserved.
 //
 
@@ -19,5 +19,9 @@
 @property (nonatomic, retain) NSString * titulo;
 @property (nonatomic, retain) Categoria *categoria;
 @property (nonatomic, retain) Quadra *quadra;
+
++ (NSString *)nomeEntidade;
+
++ (instancetype)inserirNovoObjetoNoContexto:(NSManagedObjectContext *)contexto;
 
 @end

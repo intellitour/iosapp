@@ -14,5 +14,7 @@
 + (NSDictionary *)carregarDicionarioPlist:(NSString *)plist ComChave:(NSString *)chave;
 + (BOOL) isStringVazia : (NSString *)string;
 + (NSMutableArray *)carregarPlistDeCategoriasComId:(NSString *)identificador;
++ (BOOL) isEntidadeAsaSul:(NSString *)identificador;
++ (BOOL) isEntidadeAsaNorte:(NSString *)identificador;
 
 @end

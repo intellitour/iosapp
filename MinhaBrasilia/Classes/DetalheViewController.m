@@ -29,17 +29,14 @@
                                                             longitude:-47.882587
                                                                  zoom:12];
 
-    //[self.mapView_ setMinZoom:10 maxZoom:15];
-
     self.mapView_ = [GMSMapView mapWithFrame:self.mapaView.bounds camera:camera];
     self.mapView_.myLocationEnabled = YES;
     [self.mapaView addSubview:self.mapView_];
 
-    // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];
     marker.position = CLLocationCoordinate2DMake(-33.86, 151.20);
-    marker.title = [self.loja valueForKey:@"titulo"];
-    marker.snippet = [self.loja valueForKey:@"subtitulo"];
+    //marker.title = [self.loja valueForKey:@"titulo"];
+    //marker.snippet = [self.loja valueForKey:@"subtitulo"];
     marker.map = self.mapView_;
 }
 
