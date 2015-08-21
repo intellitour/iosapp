@@ -65,7 +65,7 @@ static NSString *const SegueLoja = @"segueLoja";
     [DesignUtils customizarNavBar:self.navigationController
                      CorBtnVoltar:[UIColor whiteColor]
                         CorNavBar:[UIColor colorWithRed:0.012 green:0.651 blue:0.471 alpha:1]
-                      FonteTitulo:@"HelveticaNeue-CondensedBlack"];
+                      FonteTitulo:kFonteTitulo];
 }
 
 #pragma lojasFiltradasPor:filtro
@@ -83,10 +83,9 @@ static NSString *const SegueLoja = @"segueLoja";
                                         inManagedObjectContext:context];
     }
 
-
     [fetch setEntity:entityDescription];
     [fetch setPredicate:[NSPredicate predicateWithFormat:@"loja.categoria.nome = %@", filtro]];
-    NSError * error = nil;
+    NSError *error = nil;
     fetchedObjects = [context executeFetchRequest:fetch error:&error];
 
     return self.listaFiltrada2 = fetchedObjects.count > 1 ? fetchedObjects : nil;
@@ -101,8 +100,9 @@ static NSString *const SegueLoja = @"segueLoja";
      LojaTableViewCell *celula = [tableView dequeueReusableCellWithIdentifier:IdentificadorCelula
                                                                 forIndexPath:indexPath];
 
+     [self.listaFiltrada2 objectAtIndex:indexPath.row];
      //TODO: Refazer quando tiver mais tempo
-     if ([Utils isEntidadeAsaNorte:identificadorBtn]) {
+     /*if ([Utils isEntidadeAsaNorte:identificadorBtn]) {
          asaNorte = [self.listaFiltrada2 objectAtIndex:indexPath.row];
          [celula preencherCelulaComTitulo:asaNorte.loja.titulo
                              comSubtitulo:asaNorte.loja.subtitulo
@@ -118,7 +118,7 @@ static NSString *const SegueLoja = @"segueLoja";
                               comEndereco:asaSul.loja.endereco
                                 comQuadra:asaSul.loja.quadra.nome
                               comTelefone:asaSul.loja.telefone];
-     }
+     }*/
 
     [celula setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
      return celula;
@@ -142,8 +142,8 @@ static NSString *const SegueLoja = @"segueLoja";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:SegueLoja]) {
         DetalheViewController *detalheVC = [segue destinationViewController];
-        [detalheVC setEntidade:sender];
         [detalheVC setIdentificadorBtn:identificadorBtn];
+        [detalheVC setVlTitulo:sender];
     }
 }
 

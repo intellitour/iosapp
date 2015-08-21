@@ -47,7 +47,7 @@ static NSString *const SegueCategorias = @"segueCategorias";
     [DesignUtils customizarNavBar:self.navigationController
                      CorBtnVoltar:[UIColor whiteColor]
                         CorNavBar:[UIColor colorWithRed:0.012 green:0.651 blue:0.471 alpha:1]
-                      FonteTitulo:@"HelveticaNeue-CondensedBlack"];
+                      FonteTitulo:kFonteTitulo];
 }
 
 - (NSManagedObjectContext *)managedObjectContext {

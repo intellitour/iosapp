@@ -72,7 +72,7 @@ static NSString *const SegueTelaInicial = @"segueTelaInicial";
     //NavigationBar
     [DesignUtils customizarNavBar:self.navigationController CorBtnVoltar:nil
                         CorNavBar:[UIColor colorWithRed:0.012 green:0.651 blue:0.471 alpha:1]
-                      FonteTitulo:@"HelveticaNeue-CondensedBlack"];
+                      FonteTitulo:kFonteTitulo];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -84,13 +84,13 @@ static NSString *const SegueTelaInicial = @"segueTelaInicial";
     switch (sender.tag) {
         case 1: {
             identificador = kIdentificadorAsaNorte;
-            [self carregarEntidadeAsaNorteComId];
+            [self carregarEntidadeAsaNorte];
             //[self carregarEntidadeLojaComId:identificador keyNSUserDefault:@"listaCarregadaAsaNorte"];
             break;
         }
         case 2: {
             identificador = kIdentificadorAsaSul;
-            [self carregarEntidadeAsaSulComId];
+            [self carregarEntidadeAsaSul];
             //[self carregarEntidadeLojaComId:identificador keyNSUserDefault:@"listaCarregadaAsaSul"];
             break;
         }
@@ -131,7 +131,8 @@ static NSString *const SegueTelaInicial = @"segueTelaInicial";
     }
 }
 
-- (void)carregarEntidadeAsaSulComId {
+//TODO: Refazer método genérico
+- (void)carregarEntidadeAsaSul {
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"listaAS"]) {
         NSManagedObjectContext *contexto = [self managedObjectContext];
 
@@ -163,7 +164,7 @@ static NSString *const SegueTelaInicial = @"segueTelaInicial";
     }
 }
 
-- (void)carregarEntidadeAsaNorteComId {
+- (void)carregarEntidadeAsaNorte {
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"listaAN"]) {
         NSManagedObjectContext *contexto = [self managedObjectContext];
 

@@ -13,5 +13,5 @@
 extern NSString *const kIdentificadorAsaSul;
 extern NSString *const kIdentificadorAsaNorte;
 extern NSString *const kApiKey;
-
+extern NSString *const kFonteTitulo;
 @end

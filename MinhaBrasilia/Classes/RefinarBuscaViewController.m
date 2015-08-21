@@ -45,7 +45,7 @@ static NSString *const SegueRefinarBusca = @"segueRefinarBusca";
     [DesignUtils customizarNavBar:self.navigationController
                      CorBtnVoltar:[UIColor colorWithRed:0.925 green:0.925 blue:0.925 alpha:1]
                         CorNavBar:[UIColor colorWithRed:0.012 green:0.651 blue:0.471 alpha:1]
-                      FonteTitulo:@"HelveticaNeue-CondensedBlack"];
+                      FonteTitulo:kFonteTitulo];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -14,11 +14,6 @@
 
 @interface DetalheViewController : UIViewController
 
-@property (strong, nonatomic) Loja *loja;
-@property (strong, nonatomic) AsaNorte *asaNorte;
-@property (strong, nonatomic) AsaSul *asaSul;
-@property (strong, nonatomic) NSManagedObject *entidade;
-
 @property (nonatomic, strong) NSString* identificadorBtn;
 @property (weak, nonatomic) IBOutlet UILabel *vlTitulo;
 

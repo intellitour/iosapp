@@ -13,5 +13,6 @@
 NSString *const kIdentificadorAsaSul = @"AsaSul";
 NSString *const kIdentificadorAsaNorte = @"AsaNorte";
 NSString *const kApiKey = @"AIzaSyCvNIk8MhtF-SVRQPZfOMMyC1mr0oDG6_c";
+NSString *const kFonteTitulo = @"HelveticaNeue-CondensedBlack";
 
 @end
